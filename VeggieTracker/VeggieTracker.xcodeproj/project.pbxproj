@@ -1,0 +1,976 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E311280B280CDFA800E89F0B /* CookbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311280A280CDFA800E89F0B /* CookbookView.swift */; };
+		E311280C280CDFA800E89F0B /* CookbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311280A280CDFA800E89F0B /* CookbookView.swift */; };
+		E311280F280CE05400E89F0B /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = E311280E280CE05400E89F0B /* ACarousel */; };
+		E3112819280CE12900E89F0B /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112814280CE12800E89F0B /* ACarouselViewModel.swift */; };
+		E311281A280CE12900E89F0B /* ACarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112814280CE12800E89F0B /* ACarouselViewModel.swift */; };
+		E311281B280CE12900E89F0B /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112815280CE12800E89F0B /* ACarousel.swift */; };
+		E311281C280CE12900E89F0B /* ACarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112815280CE12800E89F0B /* ACarousel.swift */; };
+		E311281D280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112816280CE12800E89F0B /* View+ReceiveTimer.swift */; };
+		E311281E280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112816280CE12800E89F0B /* View+ReceiveTimer.swift */; };
+		E311281F280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112817280CE12800E89F0B /* ACarouselAutoScroll.swift */; };
+		E3112820280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112817280CE12800E89F0B /* ACarouselAutoScroll.swift */; };
+		E3112821280CE12900E89F0B /* AppLifeCycleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112818280CE12800E89F0B /* AppLifeCycleModifier.swift */; };
+		E3112822280CE12900E89F0B /* AppLifeCycleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3112818280CE12800E89F0B /* AppLifeCycleModifier.swift */; };
+		E311282D280CF3F300E89F0B /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112826280CF3F300E89F0B /* DancingScript-Bold.ttf */; };
+		E311282E280CF3F300E89F0B /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112826280CF3F300E89F0B /* DancingScript-Bold.ttf */; };
+		E311282F280CF3F300E89F0B /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112827280CF3F300E89F0B /* DancingScript-Medium.ttf */; };
+		E3112830280CF3F300E89F0B /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112827280CF3F300E89F0B /* DancingScript-Medium.ttf */; };
+		E3112831280CF3F300E89F0B /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112828280CF3F300E89F0B /* DancingScript-Regular.ttf */; };
+		E3112832280CF3F300E89F0B /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112828280CF3F300E89F0B /* DancingScript-Regular.ttf */; };
+		E3112833280CF3F300E89F0B /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112829280CF3F300E89F0B /* DancingScript-SemiBold.ttf */; };
+		E3112834280CF3F300E89F0B /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3112829280CF3F300E89F0B /* DancingScript-SemiBold.ttf */; };
+		E3112835280CF3F300E89F0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E311282A280CF3F300E89F0B /* OFL.txt */; };
+		E3112836280CF3F300E89F0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E311282A280CF3F300E89F0B /* OFL.txt */; };
+		E3112837280CF3F300E89F0B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E311282B280CF3F300E89F0B /* README.txt */; };
+		E3112838280CF3F300E89F0B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E311282B280CF3F300E89F0B /* README.txt */; };
+		E3112839280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */; };
+		E311283A280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */; };
+		E311283D280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */; };
+		E311283E280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */; };
+		E351A73728077501007F32FD /* VeggieTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351A73628077501007F32FD /* VeggieTrackerModel.swift */; };
+		E351A73828077507007F32FD /* VeggieTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351A73628077501007F32FD /* VeggieTrackerModel.swift */; };
+		E36F668928043EE200A87815 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F668828043EE200A87815 /* Tests_iOS.swift */; };
+		E36F668B28043EE200A87815 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F668A28043EE200A87815 /* Tests_iOSLaunchTests.swift */; };
+		E36F669528043EE200A87815 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F669428043EE200A87815 /* Tests_macOS.swift */; };
+		E36F669728043EE200A87815 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F669628043EE200A87815 /* Tests_macOSLaunchTests.swift */; };
+		E36F669828043EE200A87815 /* VeggieTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F667028043EE000A87815 /* VeggieTrackerApp.swift */; };
+		E36F669928043EE200A87815 /* VeggieTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F667028043EE000A87815 /* VeggieTrackerApp.swift */; };
+		E36F669A28043EE200A87815 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F667128043EE000A87815 /* ContentView.swift */; };
+		E36F669B28043EE200A87815 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F667128043EE000A87815 /* ContentView.swift */; };
+		E36F669C28043EE200A87815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36F667228043EE200A87815 /* Assets.xcassets */; };
+		E36F669D28043EE200A87815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36F667228043EE200A87815 /* Assets.xcassets */; };
+		E36F66B6280441C200A87815 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B3280441C200A87815 /* Child.swift */; };
+		E36F66B7280441C200A87815 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B3280441C200A87815 /* Child.swift */; };
+		E36F66B8280441C200A87815 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B4280441C200A87815 /* User.swift */; };
+		E36F66B9280441C200A87815 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B4280441C200A87815 /* User.swift */; };
+		E36F66BA280441C200A87815 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B5280441C200A87815 /* Meal.swift */; };
+		E36F66BB280441C200A87815 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B5280441C200A87815 /* Meal.swift */; };
+		E36F66BD2804431100A87815 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BC2804431100A87815 /* Ingredient.swift */; };
+		E36F66BE2804431100A87815 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BC2804431100A87815 /* Ingredient.swift */; };
+		E36F66C0280443F700A87815 /* VeggieServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BF280443F700A87815 /* VeggieServiceError.swift */; };
+		E36F66C1280443F700A87815 /* VeggieServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BF280443F700A87815 /* VeggieServiceError.swift */; };
+		E36F66C32804478900A87815 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C22804478900A87815 /* MockModel.swift */; };
+		E36F66C42804478900A87815 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C22804478900A87815 /* MockModel.swift */; };
+		E36F66C628045E8600A87815 /* ChildrenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C528045E8600A87815 /* ChildrenListView.swift */; };
+		E36F66C728045E8600A87815 /* ChildrenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C528045E8600A87815 /* ChildrenListView.swift */; };
+		E36F66C92804687800A87815 /* MealSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C82804687800A87815 /* MealSuggestionView.swift */; };
+		E36F66CA2804687800A87815 /* MealSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C82804687800A87815 /* MealSuggestionView.swift */; };
+		E36F66CC28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
+		E36F66CD28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
+		E3F5899F2805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
+		E3F589A02805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
+		E3F589A82805A12C0055C205 /* EditChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589A72805A12C0055C205 /* EditChild.swift */; };
+		E3F589A92805A12C0055C205 /* EditChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589A72805A12C0055C205 /* EditChild.swift */; };
+		E3F589AB2805A1AE0055C205 /* EditChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */; };
+		E3F589AC2805A1AE0055C205 /* EditChildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */; };
+		E3F589B42805B4D20055C205 /* EditMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B32805B4D20055C205 /* EditMeal.swift */; };
+		E3F589B52805B4D20055C205 /* EditMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B32805B4D20055C205 /* EditMeal.swift */; };
+		E3F589B72805B4E10055C205 /* EditMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B62805B4E10055C205 /* EditMealViewModel.swift */; };
+		E3F589B82805B4E10055C205 /* EditMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B62805B4E10055C205 /* EditMealViewModel.swift */; };
+		E3F589BA2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B92806CF1F0055C205 /* MealSuggestionModel.swift */; };
+		E3F589BB2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589B92806CF1F0055C205 /* MealSuggestionModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E36F668528043EE200A87815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36F666B28043EE000A87815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36F667628043EE200A87815;
+			remoteInfo = "VeggieTracker (iOS)";
+		};
+		E36F669128043EE200A87815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36F666B28043EE000A87815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36F667C28043EE200A87815;
+			remoteInfo = "VeggieTracker (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E311280A280CDFA800E89F0B /* CookbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookView.swift; sourceTree = "<group>"; };
+		E3112814280CE12800E89F0B /* ACarouselViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
+		E3112815280CE12800E89F0B /* ACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
+		E3112816280CE12800E89F0B /* View+ReceiveTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ReceiveTimer.swift"; sourceTree = "<group>"; };
+		E3112817280CE12800E89F0B /* ACarouselAutoScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselAutoScroll.swift; sourceTree = "<group>"; };
+		E3112818280CE12800E89F0B /* AppLifeCycleModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifeCycleModifier.swift; sourceTree = "<group>"; };
+		E3112826280CF3F300E89F0B /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		E3112827280CF3F300E89F0B /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Medium.ttf"; sourceTree = "<group>"; };
+		E3112828280CF3F300E89F0B /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		E3112829280CF3F300E89F0B /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
+		E311282A280CF3F300E89F0B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E311282B280CF3F300E89F0B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VeggieTracker--iOS--Info.plist"; sourceTree = "<group>"; };
+		E351A73628077501007F32FD /* VeggieTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieTrackerModel.swift; sourceTree = "<group>"; };
+		E36F667028043EE000A87815 /* VeggieTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieTrackerApp.swift; sourceTree = "<group>"; };
+		E36F667128043EE000A87815 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E36F667228043EE200A87815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E36F667728043EE200A87815 /* VeggieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeggieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F667D28043EE200A87815 /* VeggieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeggieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F667F28043EE200A87815 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E36F668428043EE200A87815 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F668828043EE200A87815 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		E36F668A28043EE200A87815 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		E36F669028043EE200A87815 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F669428043EE200A87815 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		E36F669628043EE200A87815 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		E36F66B3280441C200A87815 /* Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		E36F66B4280441C200A87815 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E36F66B5280441C200A87815 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		E36F66BC2804431100A87815 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		E36F66BF280443F700A87815 /* VeggieServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieServiceError.swift; sourceTree = "<group>"; };
+		E36F66C22804478900A87815 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
+		E36F66C528045E8600A87815 /* ChildrenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenListView.swift; sourceTree = "<group>"; };
+		E36F66C82804687800A87815 /* MealSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSuggestionView.swift; sourceTree = "<group>"; };
+		E36F66CB28046C4000A87815 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		E3F5899E2805954C0055C205 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		E3F589A72805A12C0055C205 /* EditChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChild.swift; sourceTree = "<group>"; };
+		E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewModel.swift; sourceTree = "<group>"; };
+		E3F589B32805B4D20055C205 /* EditMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMeal.swift; sourceTree = "<group>"; };
+		E3F589B62805B4E10055C205 /* EditMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMealViewModel.swift; sourceTree = "<group>"; };
+		E3F589B92806CF1F0055C205 /* MealSuggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSuggestionModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E36F667428043EE200A87815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E311280F280CE05400E89F0B /* ACarousel in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F667A28043EE200A87815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668128043EE200A87815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668D28043EE200A87815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3112813280CE12800E89F0B /* ACarousel */ = {
+			isa = PBXGroup;
+			children = (
+				E3112814280CE12800E89F0B /* ACarouselViewModel.swift */,
+				E3112815280CE12800E89F0B /* ACarousel.swift */,
+				E3112816280CE12800E89F0B /* View+ReceiveTimer.swift */,
+				E3112817280CE12800E89F0B /* ACarouselAutoScroll.swift */,
+				E3112818280CE12800E89F0B /* AppLifeCycleModifier.swift */,
+			);
+			path = ACarousel;
+			sourceTree = "<group>";
+		};
+		E3112823280CF3E300E89F0B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */,
+				E3112826280CF3F300E89F0B /* DancingScript-Bold.ttf */,
+				E3112827280CF3F300E89F0B /* DancingScript-Medium.ttf */,
+				E3112828280CF3F300E89F0B /* DancingScript-Regular.ttf */,
+				E3112829280CF3F300E89F0B /* DancingScript-SemiBold.ttf */,
+				E3112824280CF3F300E89F0B /* Dancing_Script */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E3112824280CF3F300E89F0B /* Dancing_Script */ = {
+			isa = PBXGroup;
+			children = (
+				E3112825280CF3F300E89F0B /* static */,
+				E311282A280CF3F300E89F0B /* OFL.txt */,
+				E311282B280CF3F300E89F0B /* README.txt */,
+			);
+			path = Dancing_Script;
+			sourceTree = "<group>";
+		};
+		E3112825280CF3F300E89F0B /* static */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		E351A73928082FFD007F32FD /* MealSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				E3F589B32805B4D20055C205 /* EditMeal.swift */,
+				E3F589B62805B4E10055C205 /* EditMealViewModel.swift */,
+				E36F66B5280441C200A87815 /* Meal.swift */,
+				E36F66BC2804431100A87815 /* Ingredient.swift */,
+				E3F5899E2805954C0055C205 /* MealView.swift */,
+				E3F589B92806CF1F0055C205 /* MealSuggestionModel.swift */,
+				E36F66C82804687800A87815 /* MealSuggestionView.swift */,
+				E311280A280CDFA800E89F0B /* CookbookView.swift */,
+			);
+			path = MealSubsystem;
+			sourceTree = "<group>";
+		};
+		E351A73B28083032007F32FD /* ChildSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				E3F589A72805A12C0055C205 /* EditChild.swift */,
+				E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */,
+				E36F66CB28046C4000A87815 /* ChildView.swift */,
+				E36F66B3280441C200A87815 /* Child.swift */,
+			);
+			path = ChildSubsystem;
+			sourceTree = "<group>";
+		};
+		E351A73C28083070007F32FD /* UserSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				E36F66B4280441C200A87815 /* User.swift */,
+				E36F667128043EE000A87815 /* ContentView.swift */,
+				E36F66C528045E8600A87815 /* ChildrenListView.swift */,
+			);
+			path = UserSubsystem;
+			sourceTree = "<group>";
+		};
+		E36F666A28043EE000A87815 = {
+			isa = PBXGroup;
+			children = (
+				E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */,
+				E36F666F28043EE000A87815 /* Shared */,
+				E36F667E28043EE200A87815 /* macOS */,
+				E36F668728043EE200A87815 /* Tests iOS */,
+				E36F669328043EE200A87815 /* Tests macOS */,
+				E36F667828043EE200A87815 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E36F666F28043EE000A87815 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E3112823280CF3E300E89F0B /* Fonts */,
+				E351A73C28083070007F32FD /* UserSubsystem */,
+				E351A73B28083032007F32FD /* ChildSubsystem */,
+				E351A73928082FFD007F32FD /* MealSubsystem */,
+				E351A73628077501007F32FD /* VeggieTrackerModel.swift */,
+				E3112813280CE12800E89F0B /* ACarousel */,
+				E36F667028043EE000A87815 /* VeggieTrackerApp.swift */,
+				E36F667228043EE200A87815 /* Assets.xcassets */,
+				E36F66BF280443F700A87815 /* VeggieServiceError.swift */,
+				E36F66C22804478900A87815 /* MockModel.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E36F667828043EE200A87815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E36F667728043EE200A87815 /* VeggieTracker.app */,
+				E36F667D28043EE200A87815 /* VeggieTracker.app */,
+				E36F668428043EE200A87815 /* Tests iOS.xctest */,
+				E36F669028043EE200A87815 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E36F667E28043EE200A87815 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E36F667F28043EE200A87815 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		E36F668728043EE200A87815 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E36F668828043EE200A87815 /* Tests_iOS.swift */,
+				E36F668A28043EE200A87815 /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		E36F669328043EE200A87815 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E36F669428043EE200A87815 /* Tests_macOS.swift */,
+				E36F669628043EE200A87815 /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E36F667628043EE200A87815 /* VeggieTracker (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F66A028043EE200A87815 /* Build configuration list for PBXNativeTarget "VeggieTracker (iOS)" */;
+			buildPhases = (
+				E36F667328043EE200A87815 /* Sources */,
+				E36F667428043EE200A87815 /* Frameworks */,
+				E36F667528043EE200A87815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VeggieTracker (iOS)";
+			packageProductDependencies = (
+				E311280E280CE05400E89F0B /* ACarousel */,
+			);
+			productName = "VeggieTracker (iOS)";
+			productReference = E36F667728043EE200A87815 /* VeggieTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E36F667C28043EE200A87815 /* VeggieTracker (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F66A328043EE200A87815 /* Build configuration list for PBXNativeTarget "VeggieTracker (macOS)" */;
+			buildPhases = (
+				E36F667928043EE200A87815 /* Sources */,
+				E36F667A28043EE200A87815 /* Frameworks */,
+				E36F667B28043EE200A87815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VeggieTracker (macOS)";
+			productName = "VeggieTracker (macOS)";
+			productReference = E36F667D28043EE200A87815 /* VeggieTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E36F668328043EE200A87815 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F66A628043EE200A87815 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				E36F668028043EE200A87815 /* Sources */,
+				E36F668128043EE200A87815 /* Frameworks */,
+				E36F668228043EE200A87815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36F668628043EE200A87815 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = E36F668428043EE200A87815 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E36F668F28043EE200A87815 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F66A928043EE200A87815 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				E36F668C28043EE200A87815 /* Sources */,
+				E36F668D28043EE200A87815 /* Frameworks */,
+				E36F668E28043EE200A87815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36F669228043EE200A87815 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = E36F669028043EE200A87815 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E36F666B28043EE000A87815 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					E36F667628043EE200A87815 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					E36F667C28043EE200A87815 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					E36F668328043EE200A87815 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E36F667628043EE200A87815;
+					};
+					E36F668F28043EE200A87815 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E36F667C28043EE200A87815;
+					};
+				};
+			};
+			buildConfigurationList = E36F666E28043EE000A87815 /* Build configuration list for PBXProject "VeggieTracker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E36F666A28043EE000A87815;
+			packageReferences = (
+				E311280D280CE05400E89F0B /* XCRemoteSwiftPackageReference "ACarousel" */,
+			);
+			productRefGroup = E36F667828043EE200A87815 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E36F667628043EE200A87815 /* VeggieTracker (iOS) */,
+				E36F667C28043EE200A87815 /* VeggieTracker (macOS) */,
+				E36F668328043EE200A87815 /* Tests iOS */,
+				E36F668F28043EE200A87815 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E36F667528043EE200A87815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3112835280CF3F300E89F0B /* OFL.txt in Resources */,
+				E311282F280CF3F300E89F0B /* DancingScript-Medium.ttf in Resources */,
+				E3112831280CF3F300E89F0B /* DancingScript-Regular.ttf in Resources */,
+				E311283D280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */,
+				E3112839280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */,
+				E3112833280CF3F300E89F0B /* DancingScript-SemiBold.ttf in Resources */,
+				E36F669C28043EE200A87815 /* Assets.xcassets in Resources */,
+				E3112837280CF3F300E89F0B /* README.txt in Resources */,
+				E311282D280CF3F300E89F0B /* DancingScript-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F667B28043EE200A87815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3112836280CF3F300E89F0B /* OFL.txt in Resources */,
+				E3112830280CF3F300E89F0B /* DancingScript-Medium.ttf in Resources */,
+				E3112832280CF3F300E89F0B /* DancingScript-Regular.ttf in Resources */,
+				E311283E280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */,
+				E311283A280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */,
+				E3112834280CF3F300E89F0B /* DancingScript-SemiBold.ttf in Resources */,
+				E36F669D28043EE200A87815 /* Assets.xcassets in Resources */,
+				E3112838280CF3F300E89F0B /* README.txt in Resources */,
+				E311282E280CF3F300E89F0B /* DancingScript-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668228043EE200A87815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668E28043EE200A87815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E36F667328043EE200A87815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3F589AB2805A1AE0055C205 /* EditChildViewModel.swift in Sources */,
+				E3F589A82805A12C0055C205 /* EditChild.swift in Sources */,
+				E311281D280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */,
+				E3F5899F2805954C0055C205 /* MealView.swift in Sources */,
+				E36F66C32804478900A87815 /* MockModel.swift in Sources */,
+				E36F669A28043EE200A87815 /* ContentView.swift in Sources */,
+				E351A73728077501007F32FD /* VeggieTrackerModel.swift in Sources */,
+				E3F589B72805B4E10055C205 /* EditMealViewModel.swift in Sources */,
+				E3F589B42805B4D20055C205 /* EditMeal.swift in Sources */,
+				E311281F280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */,
+				E36F669828043EE200A87815 /* VeggieTrackerApp.swift in Sources */,
+				E3F589BA2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */,
+				E36F66C0280443F700A87815 /* VeggieServiceError.swift in Sources */,
+				E3112821280CE12900E89F0B /* AppLifeCycleModifier.swift in Sources */,
+				E36F66C628045E8600A87815 /* ChildrenListView.swift in Sources */,
+				E36F66CC28046C4000A87815 /* ChildView.swift in Sources */,
+				E36F66B6280441C200A87815 /* Child.swift in Sources */,
+				E3112819280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
+				E36F66B8280441C200A87815 /* User.swift in Sources */,
+				E311280B280CDFA800E89F0B /* CookbookView.swift in Sources */,
+				E36F66BD2804431100A87815 /* Ingredient.swift in Sources */,
+				E36F66BA280441C200A87815 /* Meal.swift in Sources */,
+				E311281B280CE12900E89F0B /* ACarousel.swift in Sources */,
+				E36F66C92804687800A87815 /* MealSuggestionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F667928043EE200A87815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3F589AC2805A1AE0055C205 /* EditChildViewModel.swift in Sources */,
+				E3F589A92805A12C0055C205 /* EditChild.swift in Sources */,
+				E311281E280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */,
+				E3F589A02805954C0055C205 /* MealView.swift in Sources */,
+				E36F66C42804478900A87815 /* MockModel.swift in Sources */,
+				E36F669B28043EE200A87815 /* ContentView.swift in Sources */,
+				E351A73828077507007F32FD /* VeggieTrackerModel.swift in Sources */,
+				E3F589B82805B4E10055C205 /* EditMealViewModel.swift in Sources */,
+				E3F589B52805B4D20055C205 /* EditMeal.swift in Sources */,
+				E3112820280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */,
+				E36F669928043EE200A87815 /* VeggieTrackerApp.swift in Sources */,
+				E3F589BB2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */,
+				E36F66C1280443F700A87815 /* VeggieServiceError.swift in Sources */,
+				E3112822280CE12900E89F0B /* AppLifeCycleModifier.swift in Sources */,
+				E36F66C728045E8600A87815 /* ChildrenListView.swift in Sources */,
+				E36F66CD28046C4000A87815 /* ChildView.swift in Sources */,
+				E36F66B7280441C200A87815 /* Child.swift in Sources */,
+				E311281A280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
+				E36F66B9280441C200A87815 /* User.swift in Sources */,
+				E311280C280CDFA800E89F0B /* CookbookView.swift in Sources */,
+				E36F66BE2804431100A87815 /* Ingredient.swift in Sources */,
+				E36F66BB280441C200A87815 /* Meal.swift in Sources */,
+				E311281C280CE12900E89F0B /* ACarousel.swift in Sources */,
+				E36F66CA2804687800A87815 /* MealSuggestionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668028043EE200A87815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F668B28043EE200A87815 /* Tests_iOSLaunchTests.swift in Sources */,
+				E36F668928043EE200A87815 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F668C28043EE200A87815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F669728043EE200A87815 /* Tests_macOSLaunchTests.swift in Sources */,
+				E36F669528043EE200A87815 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E36F668628043EE200A87815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36F667628043EE200A87815 /* VeggieTracker (iOS) */;
+			targetProxy = E36F668528043EE200A87815 /* PBXContainerItemProxy */;
+		};
+		E36F669228043EE200A87815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36F667C28043EE200A87815 /* VeggieTracker (macOS) */;
+			targetProxy = E36F669128043EE200A87815 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E36F669E28043EE200A87815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E36F669F28043EE200A87815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E36F66A128043EE200A87815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VeggieTracker--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker;
+				PRODUCT_NAME = VeggieTracker;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E36F66A228043EE200A87815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VeggieTracker--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker;
+				PRODUCT_NAME = VeggieTracker;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E36F66A428043EE200A87815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker;
+				PRODUCT_NAME = VeggieTracker;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E36F66A528043EE200A87815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker;
+				PRODUCT_NAME = VeggieTracker;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E36F66A728043EE200A87815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "chaima.ghaddab.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VeggieTracker (iOS)";
+			};
+			name = Debug;
+		};
+		E36F66A828043EE200A87815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "chaima.ghaddab.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VeggieTracker (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E36F66AA28043EE200A87815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "chaima.ghaddab.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "VeggieTracker (macOS)";
+			};
+			name = Debug;
+		};
+		E36F66AB28043EE200A87815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "chaima.ghaddab.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "VeggieTracker (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E36F666E28043EE000A87815 /* Build configuration list for PBXProject "VeggieTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F669E28043EE200A87815 /* Debug */,
+				E36F669F28043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F66A028043EE200A87815 /* Build configuration list for PBXNativeTarget "VeggieTracker (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F66A128043EE200A87815 /* Debug */,
+				E36F66A228043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F66A328043EE200A87815 /* Build configuration list for PBXNativeTarget "VeggieTracker (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F66A428043EE200A87815 /* Debug */,
+				E36F66A528043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F66A628043EE200A87815 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F66A728043EE200A87815 /* Debug */,
+				E36F66A828043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F66A928043EE200A87815 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F66AA28043EE200A87815 /* Debug */,
+				E36F66AB28043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E311280D280CE05400E89F0B /* XCRemoteSwiftPackageReference "ACarousel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JWAutumn/ACarousel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E311280E280CE05400E89F0B /* ACarousel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E311280D280CE05400E89F0B /* XCRemoteSwiftPackageReference "ACarousel" */;
+			productName = ACarousel;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E36F666B28043EE000A87815 /* Project object */;
+}

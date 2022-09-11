@@ -1,0 +1,60 @@
+//
+//  EditChildViewModel.swift
+//  VeggieTracker
+//
+//  Created by Chaima Ghaddab on 12.04.22.
+//
+
+import Combine
+import Foundation
+import CoreLocation
+import SwiftUI
+import os
+
+class EditChildViewModel: ObservableObject {
+    @Published var name: String = ""
+    @Published var age : Int = 0
+    @Published var meals = [Meal]()
+    
+    let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "EditChild")
+    
+    var id: Child.ID
+    var model: VeggieTrackerModel
+    
+    
+    var disableSaveButton: Bool {
+        self.name == "" || self.age == 0
+    }
+    
+    init(_ model: VeggieTrackerModel, id: Child.ID) {
+        self.model = model
+        self.id = id
+    }
+    
+    //  Updates an existing child
+    func updateStates() {
+        guard let child = model.child(id) else {
+            return
+        }
+        self.name = child.name
+        self.meals = child.meals
+        self.age = child.age
+    }
+    
+    //  Either updates an existng child or adds a new child to the user's account
+    func save() {
+        guard let child = model.child(self.id) else {
+            let child = Child(id: UUID(), name: name, age: age, meals: meals)
+            model.save(child)
+            logger.log("Added a new child \(child.name): \(child.description)")
+            return
+        }
+        child.name = self.name
+        child.meals = self.meals
+        child.age = self.age
+        model.save(child)
+        logger.log("Edited child \(child.name): \(child.description)")
+    }
+}
+
+
