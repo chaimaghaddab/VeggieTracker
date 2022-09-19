@@ -14,17 +14,24 @@ struct ChildView: View {
     
     @ObservedObject var child: Child
     
+    /// if set to true, the sheet for adding a meal is presented
     @State var presentAddMeal = false
+    /// if set to true, the sheet for editing a child's profile is presented
     @State var presentEditChild = false
+    /// if set to true, an alert message is presented giving a choice for manually adding a meal or choosing from cookbook
     @State var presentAlertMessage = false
+    /// if set to true, the cookbook of the user is presented
     @State var presentCookbook = false
+    /// indicates to redirect to the cookbook
     @State var goToCookbook = false
+    /// set of selected meals
     @State var selectedMeals = Set<Meal>()
     
     init(child: Child) {
         self.child = child
     }
     
+    /// returns the index of the current child
     func currentChild() -> Int {
         guard let index = model.children.firstIndex(of: child) else {
             return 0
@@ -35,31 +42,42 @@ struct ChildView: View {
     var body: some View {
         VStack{
             VStack{
+                /// child's nema
                 Text(child.name).font(Font.custom( "DancingScript-Bold", size: 40))
+                /// child's description indicates age
                 Text(child.description).font(Font.custom( "DancingScript-Bold", size: 30)).foregroundColor(Color.mint)
             }
+            /// List of child's registred meals
             List(model.children[currentChild()].meals, id: \.self) {
                 meal in
+                /// a link to the meal in the list
                 NavigationLink(destination: MealView(meal: meal, child: child, editOption: true, addOption: false)){
                     HStack {
+                        /// Meal's name
                         Text(meal.name)
                         Spacer()
+                        /// Meal's degree on vegetables
                         meal.grade
                     }
                 }
             }
+            /// Sheet for adding a meal
             .sheet(isPresented: $presentAddMeal) {
                 EditMeal(model.children[currentChild()], id: nil, model: model)
             }
+            /// Sheet for presenting cookbook
             .sheet(isPresented: $presentCookbook) {
                 NavigationView{
                     VStack {
+                        /// Link to redirect to cookbook
                         NavigationLink(destination: CookbookView(model: model), isActive: $goToCookbook) {}
+                        /// List of selected meals
                         List(model.meals, id: \.self, selection: $selectedMeals) {
                             meal in
                             Text(meal.name)
                         }
                         Spacer()
+                        /// Button to redirect to cookbook
                         Button(action: {
                             goToCookbook = true
                         }){
@@ -72,6 +90,7 @@ struct ChildView: View {
                             Button(action: {
                                 for meal in selectedMeals {
                                     if !child.meals.contains(meal) {
+                                        /// save changes for the corresponding child
                                         if let child = model.child(child.id) {
                                             child.save(meal)
                                             model.save(child)
@@ -84,6 +103,7 @@ struct ChildView: View {
                                 Text("Save")
                             }
                         }
+                        /// Button for canceling changes
                         ToolbarItem(placement: .cancellationAction){
                             Button (action: {presentCookbook = false}){
                                 Text("Cancel")
@@ -95,8 +115,10 @@ struct ChildView: View {
             }
         }.toolbar {
             ToolbarItem(placement: .automatic) {
+                /// Button for adding a meal
                 addButton
             }
+            /// Button for editing a child's profile
             ToolbarItem(placement: .primaryAction) {
                 Button(action: {self.presentEditChild = true}){
                     Text("edit")
@@ -106,9 +128,8 @@ struct ChildView: View {
             EditChild(model, id: child.id)
         }
     }
-    
+    /// Button for adding a new meal manually of from cookbook
     private var addButton: some View {
-        
         Button(action: { self.presentAlertMessage = true
         }) {
             Image(systemName: "plus")
