@@ -11,9 +11,13 @@ import CoreLocation
 import SwiftUI
 import os
 
+/// The view model for the meal editing view
 class EditMealViewModel: ObservableObject {
+    /// The list of ingredients
     @Published var ingredients : [String] = [""]
+    /// the name of the meal
     @Published var name: String = ""
+    /// Whether the ingredients are veggie
     @Published var veggie: [Bool] = [true]
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "EditMeal")
@@ -29,10 +33,12 @@ class EditMealViewModel: ObservableObject {
         self.model = model
     }
     
+    /// the save button is disabled as long as the name is empty or the list of ingredients is empty
     var disableSaveButton: Bool {
         self.name == "" || self.ingredients.isEmpty || self.ingredients == [""]
     }
     
+    /// updates the form with the information from the meal's instance
     func updateStates() {
         if let child = model.child(child.id){
             if let meal = child.meal(self.id) {
@@ -47,7 +53,7 @@ class EditMealViewModel: ObservableObject {
         }
     }
     
-    //  Updates or adds a new meal based on the edit meal sheet
+    ///  Updates or adds a new meal based on the edit meal sheet
     func save(){
         for i in (0..<veggie.count) {
             let ingredient = ingredients[i].lowercased()

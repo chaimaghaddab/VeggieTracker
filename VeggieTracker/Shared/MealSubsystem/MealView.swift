@@ -28,24 +28,27 @@ struct MealView: View {
         self.addOption = addOption
     }
     
+    /// The meal view contains a list of all ingredients
     var body: some View {
         List {
             VStack{
+                /// Meal's name
                 Text(meal.name).font(Font.custom( "DancingScript-Bold", size: 40))
                 Spacer().frame(height: 5)
+                /// Meal's grade (number of veggie ingredients)
                 meal.grade
-                
+                /// if an image for the meal exists, it would be presented
                 if meal.imageUrl != "" {
                     self.image
                 }
                 Spacer().frame(height: 50)
-                
+                /// A list with the meal's ingredients
                 Text("Ingredients:").font(Font.headline)
                 Spacer()
                 self.ingredients
                 
                 Spacer().frame(height: 50)
-                
+                /// if instructions for the meal exists it would be presented
                 if meal.tips != nil && meal.tips != "" {
                     Text("Instructions:").font(Font.headline)
                     self.tips
@@ -54,12 +57,14 @@ struct MealView: View {
         }.toolbar {
             ToolbarItem(placement: .primaryAction){
                 if editOption {
+                    /// A button to edit the meal if the meal already exists
                     Button(action: {presentEditMeal = true}){
                         Text("edit")
                     }
                 }
                 else {
                     if addOption {
+                        /// A button to add a meal if the meal does not exist
                         self.addButton
                     }
                 }
@@ -68,7 +73,7 @@ struct MealView: View {
             EditMeal(child, id: meal.id, model: model)
         }
     }
-    
+    /// The view representing the image of the meal retrieved from the API through the stored URL
     var image: some View {
         AsyncImage(url: URL(string: meal.imageUrl!),
                    content: { image in
@@ -80,7 +85,7 @@ struct MealView: View {
             ProgressView()
         })
     }
-    
+    /// The view representing the list of ingredients
     var ingredients: some View {
         ForEach(meal.ingredients, id: \.self) {
             ingredient in
@@ -93,7 +98,7 @@ struct MealView: View {
             }
         }
     }
-    
+    /// the view representing the meal's instructions
     var tips: some View {
         VStack(alignment: .leading){
             Spacer()
@@ -108,7 +113,7 @@ struct MealView: View {
             }
         }
     }
-    
+    /// Button for adding a meal
     var addButton: some View {
         Button(action: {
             presentAlertMessage = true

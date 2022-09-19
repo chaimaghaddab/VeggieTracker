@@ -10,18 +10,16 @@ import SwiftUI
 import CoreLocation
 import Combine
 
+/// View for editing a meal
 struct EditMeal: View {
     @Environment(\.presentationMode) private var presentationMode
     
     @ObservedObject private var viewModel: EditMealViewModel
     
-    @State var counter = 0
-    
     init(_ child: Child , id: Meal.ID, model: VeggieTrackerModel) {
         self.viewModel = EditMealViewModel(child, id: id, model: model)
     }
-    
-    
+    /// depending on whether the meal exists already the title of the sheet is different
     var navigationTitle: String {
         viewModel.id == nil ? "Create Meal" : "Edit Meal"
     }
@@ -29,17 +27,19 @@ struct EditMeal: View {
     var body: some View {
         NavigationView {
             self.form
+            /// if the meal exists, the ingredients of the meal are loaded on the sheet
                 .onAppear(perform: viewModel.updateStates)
                 .navigationBarTitle(navigationTitle, displayMode: .inline)
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(
                     leading:
+                        /// Button for canceling the changes
                         Button(action : { self.presentationMode.wrappedValue.dismiss()
-                            
                         }){
                             Text("Cancel").foregroundColor(Color.red)
                         },
                     trailing:
+                        /// Button for saving the changes
                         Button(action : {
                             viewModel.save()
                             self.presentationMode.wrappedValue.dismiss()
@@ -52,15 +52,17 @@ struct EditMeal: View {
     
     private var form: some View {
         Form {
+            /// The meal's name
             Section(header: Text("Name")) {
                 TextField("Name", text: $viewModel.name)
             }
-            
+            /// The meal's list of ingredients
             Section(header: Text("Ingredients")) {
                 Section {
                     ForEach(0..<viewModel.ingredients.count, id: \.self) { index in
                         HStack {
                             TextField("Ingredient", text: $viewModel.ingredients[index])
+                            /// The toggle is on if the ingredient is a vegetable
                             Toggle("", isOn: $viewModel.veggie[index])
                         }
                     }
