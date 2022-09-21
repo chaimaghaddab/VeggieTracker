@@ -7,6 +7,7 @@
 
 import SwiftUI
 import os
+import UserNotifications
 
 struct ContentView: View {
     
@@ -15,7 +16,7 @@ struct ContentView: View {
     @State private var isShowingChildrenView = false
     @State private var isShowingInfoView = false
     @State private var isShowingCookbook = false
-    
+    @State private var scheduleNotifications = false
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
     var body: some View {
@@ -42,10 +43,28 @@ struct ContentView: View {
                     logger.log("Loading cookbook")
                 }.padding().foregroundColor(Color.green).font(Font.headline)
             }
+            .toolbar {
+                Button {
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                        if success {
+                            print("All set!")
+                            scheduleNotifications = true
+                        } else if let error = error {
+                            print(error.localizedDescription)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "bell.fill").foregroundColor(.green)
+                }
+
+            }
         }
         .frame( maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("veggies").resizable())
         .ignoresSafeArea().opacity(0.9)
+        .sheet(isPresented: $scheduleNotifications) {
+            ScheduleNotificationsView(model)
+        }
     }
 }
 

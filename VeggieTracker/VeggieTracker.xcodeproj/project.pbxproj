@@ -66,6 +66,14 @@
 		E36F66CA2804687800A87815 /* MealSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C82804687800A87815 /* MealSuggestionView.swift */; };
 		E36F66CC28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
 		E36F66CD28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
+		E3E91BFB28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */; };
+		E3E91BFC28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */; };
+		E3E91BFF28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */; };
+		E3E91C0028DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */; };
+		E3E91C0228DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */; };
+		E3E91C0328DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */; };
+		E3E91C0528DB3E0C00FB66D9 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C0428DB3E0C00FB66D9 /* Notification.swift */; };
+		E3E91C0628DB3E0C00FB66D9 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C0428DB3E0C00FB66D9 /* Notification.swift */; };
 		E3F5899F2805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
 		E3F589A02805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
 		E3F589A82805A12C0055C205 /* EditChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589A72805A12C0055C205 /* EditChild.swift */; };
@@ -134,6 +142,11 @@
 		E36F66C528045E8600A87815 /* ChildrenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenListView.swift; sourceTree = "<group>"; };
 		E36F66C82804687800A87815 /* MealSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSuggestionView.swift; sourceTree = "<group>"; };
 		E36F66CB28046C4000A87815 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		E3E91BF928DB35D300FB66D9 /* VeggieTracker (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VeggieTracker (iOS).entitlements"; sourceTree = "<group>"; };
+		E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieTrackerAppDelegate.swift; sourceTree = "<group>"; };
+		E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotificationsView.swift; sourceTree = "<group>"; };
+		E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotificationsViewModel.swift; sourceTree = "<group>"; };
+		E3E91C0428DB3E0C00FB66D9 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		E3F5899E2805954C0055C205 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E3F589A72805A12C0055C205 /* EditChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChild.swift; sourceTree = "<group>"; };
 		E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +269,7 @@
 		E36F666A28043EE000A87815 = {
 			isa = PBXGroup;
 			children = (
+				E3E91BF928DB35D300FB66D9 /* VeggieTracker (iOS).entitlements */,
 				E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */,
 				E36F666F28043EE000A87815 /* Shared */,
 				E36F667E28043EE200A87815 /* macOS */,
@@ -268,6 +282,7 @@
 		E36F666F28043EE000A87815 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E3E91BFD28DB3ABB00FB66D9 /* NotificationsSubsystem */,
 				E3112823280CF3E300E89F0B /* Fonts */,
 				E351A73C28083070007F32FD /* UserSubsystem */,
 				E351A73B28083032007F32FD /* ChildSubsystem */,
@@ -275,6 +290,7 @@
 				E351A73628077501007F32FD /* VeggieTrackerModel.swift */,
 				E3112813280CE12800E89F0B /* ACarousel */,
 				E36F667028043EE000A87815 /* VeggieTrackerApp.swift */,
+				E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */,
 				E36F667228043EE200A87815 /* Assets.xcassets */,
 				E36F66BF280443F700A87815 /* VeggieServiceError.swift */,
 				E36F66C22804478900A87815 /* MockModel.swift */,
@@ -317,6 +333,16 @@
 				E36F669628043EE200A87815 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		E3E91BFD28DB3ABB00FB66D9 /* NotificationsSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */,
+				E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */,
+				E3E91C0428DB3E0C00FB66D9 /* Notification.swift */,
+			);
+			path = NotificationsSubsystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,11 +529,13 @@
 				E3F589A82805A12C0055C205 /* EditChild.swift in Sources */,
 				E311281D280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */,
 				E3F5899F2805954C0055C205 /* MealView.swift in Sources */,
+				E3E91BFF28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */,
 				E36F66C32804478900A87815 /* MockModel.swift in Sources */,
 				E36F669A28043EE200A87815 /* ContentView.swift in Sources */,
 				E351A73728077501007F32FD /* VeggieTrackerModel.swift in Sources */,
 				E3F589B72805B4E10055C205 /* EditMealViewModel.swift in Sources */,
 				E3F589B42805B4D20055C205 /* EditMeal.swift in Sources */,
+				E3E91C0228DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift in Sources */,
 				E311281F280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */,
 				E36F669828043EE200A87815 /* VeggieTrackerApp.swift in Sources */,
 				E3F589BA2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */,
@@ -517,9 +545,11 @@
 				E36F66CC28046C4000A87815 /* ChildView.swift in Sources */,
 				E36F66B6280441C200A87815 /* Child.swift in Sources */,
 				E3112819280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
+				E3E91BFB28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */,
 				E36F66B8280441C200A87815 /* User.swift in Sources */,
 				E311280B280CDFA800E89F0B /* CookbookView.swift in Sources */,
 				E36F66BD2804431100A87815 /* Ingredient.swift in Sources */,
+				E3E91C0528DB3E0C00FB66D9 /* Notification.swift in Sources */,
 				E36F66BA280441C200A87815 /* Meal.swift in Sources */,
 				E311281B280CE12900E89F0B /* ACarousel.swift in Sources */,
 				E36F66C92804687800A87815 /* MealSuggestionView.swift in Sources */,
@@ -534,11 +564,13 @@
 				E3F589A92805A12C0055C205 /* EditChild.swift in Sources */,
 				E311281E280CE12900E89F0B /* View+ReceiveTimer.swift in Sources */,
 				E3F589A02805954C0055C205 /* MealView.swift in Sources */,
+				E3E91C0028DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */,
 				E36F66C42804478900A87815 /* MockModel.swift in Sources */,
 				E36F669B28043EE200A87815 /* ContentView.swift in Sources */,
 				E351A73828077507007F32FD /* VeggieTrackerModel.swift in Sources */,
 				E3F589B82805B4E10055C205 /* EditMealViewModel.swift in Sources */,
 				E3F589B52805B4D20055C205 /* EditMeal.swift in Sources */,
+				E3E91C0328DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift in Sources */,
 				E3112820280CE12900E89F0B /* ACarouselAutoScroll.swift in Sources */,
 				E36F669928043EE200A87815 /* VeggieTrackerApp.swift in Sources */,
 				E3F589BB2806CF1F0055C205 /* MealSuggestionModel.swift in Sources */,
@@ -548,9 +580,11 @@
 				E36F66CD28046C4000A87815 /* ChildView.swift in Sources */,
 				E36F66B7280441C200A87815 /* Child.swift in Sources */,
 				E311281A280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
+				E3E91BFC28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */,
 				E36F66B9280441C200A87815 /* User.swift in Sources */,
 				E311280C280CDFA800E89F0B /* CookbookView.swift in Sources */,
 				E36F66BE2804431100A87815 /* Ingredient.swift in Sources */,
+				E3E91C0628DB3E0C00FB66D9 /* Notification.swift in Sources */,
 				E36F66BB280441C200A87815 /* Meal.swift in Sources */,
 				E311281C280CE12900E89F0B /* ACarousel.swift in Sources */,
 				E36F66CA2804687800A87815 /* MealSuggestionView.swift in Sources */,
@@ -706,6 +740,7 @@
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VeggieTracker (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -739,6 +774,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VeggieTracker (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
 				CURRENT_PROJECT_VERSION = 1;

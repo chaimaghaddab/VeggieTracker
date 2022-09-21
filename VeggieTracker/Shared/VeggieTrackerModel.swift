@@ -14,7 +14,7 @@ public class VeggieTrackerModel: ObservableObject {
     @Published public internal(set) var children: [Child]
     @Published public internal(set) var meals: [Meal]
     @Published public internal(set) var serverError: VeggieServiceError?
-    
+    @Published public internal(set) var notifications: [Notification]
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "Model")
     
@@ -25,6 +25,7 @@ public class VeggieTrackerModel: ObservableObject {
         self.user = user
         self.children = children
         self.meals = meals
+        self.notifications = []
     }
     
     //  returns child with id
