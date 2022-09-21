@@ -34,7 +34,6 @@
 		E3112838280CF3F300E89F0B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = E311282B280CF3F300E89F0B /* README.txt */; };
 		E3112839280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */; };
 		E311283A280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E311282C280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf */; };
-		E311283D280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */; };
 		E311283E280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */; };
 		E351A73728077501007F32FD /* VeggieTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351A73628077501007F32FD /* VeggieTrackerModel.swift */; };
 		E351A73828077507007F32FD /* VeggieTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351A73628077501007F32FD /* VeggieTrackerModel.swift */; };
@@ -429,7 +428,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					E36F667628043EE200A87815 = {
 						CreatedOnToolsVersion = 13.3;
@@ -479,7 +478,6 @@
 				E3112835280CF3F300E89F0B /* OFL.txt in Resources */,
 				E311282F280CF3F300E89F0B /* DancingScript-Medium.ttf in Resources */,
 				E3112831280CF3F300E89F0B /* DancingScript-Regular.ttf in Resources */,
-				E311283D280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist in Resources */,
 				E3112839280CF3F300E89F0B /* DancingScript-VariableFont_wght.ttf in Resources */,
 				E3112833280CF3F300E89F0B /* DancingScript-SemiBold.ttf in Resources */,
 				E36F669C28043EE200A87815 /* Assets.xcassets in Resources */,
@@ -658,6 +656,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -716,6 +715,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -810,9 +810,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = UKGSZT3NV9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -838,9 +840,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = UKGSZT3NV9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -907,6 +911,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = UKGSZT3NV9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -926,6 +931,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = UKGSZT3NV9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
