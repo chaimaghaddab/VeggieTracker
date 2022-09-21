@@ -8,6 +8,7 @@
 import SwiftUI
 import os
 
+/// The view that represents the list of meals from the API www.themealdb.com
 struct MealSuggestionView: View {
     @StateObject var viewModel: MealSuggestionModel = MealSuggestionModel()
     @State private var searchText = ""
@@ -15,6 +16,7 @@ struct MealSuggestionView: View {
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "MealView")
     
     var body: some View {
+        /// List of meals fetched from the API
         List(searchResult, id: \.self) { meal in
             NavigationLink(destination: MealView(meal: meal, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: true)) {
                 HStack {
@@ -37,11 +39,13 @@ struct MealSuggestionView: View {
                 print(error)
             }
         }
+        /// text field to search for meals based on ingredients
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Type ingredient")
         .navigationTitle("Meals").font(Font.custom( "DancingScript-Bold", size: 25))
         .environmentObject(viewModel)
     }
     
+    /// result of the search based on ingredients
     var searchResult: [Meal] {
         if searchText.isEmpty {
             return viewModel.meals
