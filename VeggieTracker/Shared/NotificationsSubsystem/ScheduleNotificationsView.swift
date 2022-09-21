@@ -42,8 +42,12 @@ struct ScheduleNotificationsView: View {
     private var form: some View {
         Form {
             Section("Scheduled Notifications") {
-                ForEach(viewModel.model.notifications) {notification in
-                    Text("\(notification.title)")
+                List(viewModel.model.notifications) { notification in
+                    Text("\(notification.title)").swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button("Delete", role: .destructive) {
+                            viewModel.model.notifications.removeAll { $0.id == notification.id }
+                        }
+                    }
                 }
             }
             Section("Schedule new Notification") {

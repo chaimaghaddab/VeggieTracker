@@ -22,6 +22,7 @@ struct ContentView: View {
     /// if true the view representing the cookbook of the parent(user) is opened
     @State private var isShowingCookbook = false
     @State private var scheduleNotifications = false
+    @State private var authorizationDeniedAlert = false
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
     var body: some View {
@@ -59,7 +60,14 @@ struct ContentView: View {
             }
             .toolbar {
                 Button {
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    let currentCenter = UNUserNotificationCenter.current()
+                    currentCenter.getNotificationSettings { settings in
+                        let status = settings.authorizationStatus
+                        if status == .denied || status == .notDetermined {
+                            self.authorizationDeniedAlert = true
+                        }
+                    }
+                    currentCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {
                             print("All set!")
                             scheduleNotifications = true
@@ -70,7 +78,6 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "bell.fill").foregroundColor(.green)
                 }
-
             }
         }
         .frame( maxWidth: .infinity, maxHeight: .infinity)
@@ -78,6 +85,16 @@ struct ContentView: View {
         .ignoresSafeArea().opacity(0.9)
         .sheet(isPresented: $scheduleNotifications) {
             ScheduleNotificationsView(model)
+        }.alert(isPresented: $authorizationDeniedAlert) {
+            Alert(
+                            title: Text("Notifications Unothorized"),
+                            message: Text("Please enable notifications for the App VeggieTracker in the settings!"),
+                            primaryButton: .default(Text("Settings")) {
+                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                            },
+                            secondaryButton: .cancel()
+                        )
+
         }
     }
 }

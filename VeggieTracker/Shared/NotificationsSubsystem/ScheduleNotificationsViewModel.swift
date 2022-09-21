@@ -33,8 +33,9 @@ class ScheduleNotificationsViewModel: ObservableObject {
     func save() {
         model.notifications.append(Notification(id: UUID(), title: title, time: time, frequency: frequency, child: childSelection, allChildren: allChildren))
         let content = UNMutableNotificationContent()
+        let child = model.child(childSelection)
         content.title = title
-        content.subtitle = "Don't forget to enter the meal!"
+        content.subtitle = allChildren ? "Reminder: it's your children's \(title) time!" : "Reminder: it's \(child!.name)'s \(title) time!"
         content.sound = UNNotificationSound.default
 
         // show this notification five seconds from now
