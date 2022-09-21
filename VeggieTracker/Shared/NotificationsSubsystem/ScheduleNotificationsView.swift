@@ -47,20 +47,20 @@ struct ScheduleNotificationsView: View {
                 }
             }
             Section("Schedule new Notification") {
-                
-                Section() {
-                                    TextField("Title", text: $viewModel.title)
-                }
-                
-                Section() {
-                    DatePicker("Time", selection: $viewModel.time, displayedComponents: [.hourAndMinute])
-                }
-                Section() {
-                                    Picker("Frequency", selection: $frequency) {
-                                        ForEach(FREQUENCY.allCases, id: \.self) {
-                                            frequency in Text("\(frequency.rawValue)")
-                                        }
-                                    }.pickerStyle(WheelPickerStyle())
+                TextField("Title", text: $viewModel.title)
+                DatePicker("Time", selection: $viewModel.time, displayedComponents: [.hourAndMinute])
+                Picker("Frequency", selection: $frequency) {
+                    ForEach(FREQUENCY.allCases, id: \.self) {
+                        frequency in Text("\(frequency.rawValue)")
+                    }
+                }.pickerStyle(.segmented)
+                Toggle("For all children", isOn: $viewModel.allChildren)
+                if !viewModel.allChildren {
+                    Picker("Child", selection: $viewModel.childSelection) {
+                        ForEach(viewModel.model.children, id: \.id) {
+                            child in Text("\(child.name)")
+                        }
+                    }
                 }
             }
         }

@@ -19,11 +19,15 @@ public class Notification: Identifiable {
     var title: String = ""
     var time: Date = Date()
     var frequency: FREQUENCY
+    var child: Child.ID?
+    var allChildren: Bool
     
-    public init(id: UUID, title: String, time: Date, frequency: FREQUENCY) {
+    public init(id: UUID, title: String, time: Date, frequency: FREQUENCY, child: Child.ID, allChildren: Bool) {
         self.id = id
         self.title = title
         self.time = time
         self.frequency = frequency
+        self.child = child
+        self.allChildren = allChildren
     }
 }

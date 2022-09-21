@@ -75,4 +75,10 @@ extension Child: Comparable {
 }
 
 extension Child: Identifiable { }
+extension Child: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(age)
+    }
+}
 
