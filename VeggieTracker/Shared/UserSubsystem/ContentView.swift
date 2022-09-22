@@ -23,8 +23,8 @@ struct ContentView: View {
     @State private var isShowingCookbook = false
     @State private var scheduleNotifications = false
     @State private var authorizationDeniedAlert = false
-    @State private var showMeal = false
-    @State private var mealID = ""
+    @State private var selectedMeal: Meal?
+    
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
     var body: some View {
@@ -85,9 +85,7 @@ struct ContentView: View {
         .frame( maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("veggies").resizable())
         .ignoresSafeArea().opacity(0.9)
-        .sheet(isPresented: $scheduleNotifications) {
-            ScheduleNotificationsView(model)
-        }.alert(isPresented: $authorizationDeniedAlert) {
+        .alert(isPresented: $authorizationDeniedAlert) {
             Alert(
                 title: Text("Notifications Unothorized"),
                 message: Text("Please enable notifications for the App VeggieTracker in the settings!"),
@@ -97,22 +95,24 @@ struct ContentView: View {
                 secondaryButton: .cancel()
             )
             
-        }.onOpenURL { url in
+        }
+        .sheet(isPresented: $scheduleNotifications) {
+            ScheduleNotificationsView(model)
+        }
+        .sheet(item: $selectedMeal) { meal in
+            MealView(meal: meal, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: false)
+        }
+        .onOpenURL { url in
             print(url)
-            guard url.scheme == "veggie" else {
-                
-                return }
-
-            if(url.host == "meals") {
-                mealID = url.pathComponents[1]
-                print(mealID)
-                print(model.meal(UUID(uuidString: mealID)!) ?? "No meal")
-                showMeal = true
+            guard url.scheme == "veggie" else { return }
+            
+            if(url.host == "meals") { // TODO: Once the @AppStorage is done, make an API call here and then get the meal by id
+                let mealID = url.pathComponents[1]
+                guard let mealUUID = UUID(uuidString: mealID),
+                      let meal = model.meal(mealUUID) else { return }
+                print(meal)
+                selectedMeal = meal
             }
-            
-        }.sheet(isPresented: $showMeal) {
-            
-            MealView(meal: model.meal(UUID(uuidString: mealID)!)!, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: false)
         }
     }
 }

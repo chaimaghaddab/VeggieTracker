@@ -6,33 +6,45 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct MediumWidgetView: View {
     var entry: Provider.Entry
     var body: some View {
-        VStack {
-            ForEach(entry.meals, id: \.id) {
-                meal in
+        VStack(alignment: .leading, spacing: 2) {
+            ForEach(entry.meals.prefix(3), id: \.id) { meal in
                 VStack {
-                    
-                    Link(destination: URL(string: "veggie://meals/\(meal.id!)")!){Text(meal.name).font(.title)
-                        AsyncImage(url: URL(string: meal.imageUrl!),
-                                   content: { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 300, maxHeight: 300)
-                        },
-                                   placeholder: {
-                            ProgressView()
-                        })
-                    }}
+                    Link(destination: URL(string: "veggie://meals/\(meal.id!)")!) {
+                        HStack {
+                            Image(systemName: "leaf.circle.fill")
+                                .font(.system(size: 20))
+                                .foregroundColor(.green)
+                                .padding(.leading)
+                            Text(meal.name)
+                                .font(.system(size: 18))
+                            Spacer()
+                        }
+                        .padding(.vertical, 10)
+                    }
+                }
             }
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.black.opacity(0.7), lineWidth: 1)
+                    .background(.black.opacity(0.1))
+                    .padding(4)
+            }
+            .padding(.horizontal)
         }
+        .background(Image("veggies").opacity(0.3))
     }
 }
 
 struct MediumWidgetView_Previews: PreviewProvider {
+    static let mockModel = MockModel.init()
+    
     static var previews: some View {
-        MediumWidgetView(entry: Provider.Entry(date: .now, configuration: ConfigurationIntent(), meals: [], notification: MockModel.init().notifications[0]))
+        MediumWidgetView(entry: Provider.Entry(date: .now, configuration: ConfigurationIntent(), meals: mockModel.meals, notification: mockModel.notifications[0]))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

@@ -45,16 +45,16 @@ struct SimpleEntry: TimelineEntry {
 struct VeggieWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var widgetFamily
-
+    
     var body: some View {
         switch widgetFamily {
-                case .systemSmall:
-                    SmallWidgetView(entry: entry)
-                case.systemMedium:
-            MediumWidgetView(entry: entry).background(Image("veggies").opacity(0.3))
-                default:
-                    Text("This size not supported :(")
-                }
+        case .systemSmall:
+            SmallWidgetView(entry: entry)
+        case.systemMedium:
+            MediumWidgetView(entry: entry)
+        default:
+            Text("This size not supported :(")
+        }
 
     }
 }

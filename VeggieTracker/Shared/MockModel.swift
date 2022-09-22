@@ -20,21 +20,17 @@ public class MockModel : VeggieTrackerModel {
         
         let meal1 = Meal(UUID(uuidString: "0bbb0214-3a6d-11ed-a261-0242ac120002"),
                          ingredients: [Ingredient(name:"carrot", veggie: true)],
-                         name: "Carrot_cake"
-        )
+                         name: "Carrot cake")
         
-        let meal2 = Meal( UUID(uuidString: "15b42746-3a6d-11ed-a261-0242ac120002"),
+        let meal2 = Meal(UUID(uuidString: "15b42746-3a6d-11ed-a261-0242ac120002"),
                           ingredients: [Ingredient(name:"broccoli", veggie: true), Ingredient(name:"carrot", veggie: true)],
-                          name: "Roasted_Veggies"
-        )
+                          name: "Roasted Veggies")
         
-        let meals = [
-            meal1,
-            meal2,
-            Meal(UUID(uuidString: "1f21c036-3a6d-11ed-a261-0242ac120002"),
-                 ingredients: [Ingredient(name:"potato", veggie: true)],
-                 name: "Oven_Potato")
-        ]
+        let meal3 = Meal(UUID(uuidString: "00000000-0000-4000-8000-000000000000"),
+                         ingredients: [Ingredient(name:"potato", veggie: true)],
+                         name: "Oven Potato")
+        
+        let meals = [meal1, meal2, meal3]
         
         children[0].meals = meals
         children[1].meals.append(meal1)

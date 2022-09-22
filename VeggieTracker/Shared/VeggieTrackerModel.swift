@@ -39,11 +39,6 @@ public class VeggieTrackerModel: ObservableObject {
         meals.first { $0.id == id }
     }
     
-    ///  returns meal with id
-    public func meal(_ name: String) -> Meal? {
-        meals.first { $0.name == name }
-    }
-    
     
     ///  updates an existing child
     private func update(_ child: Child) {

@@ -418,10 +418,10 @@
 			children = (
 				E3E91C7428DC769E00FB66D9 /* VeggieTrackerWidget.swift */,
 				E3E91C8528DC770900FB66D9 /* SmallWidgetView.swift */,
+				E3E91C8828DC774E00FB66D9 /* MediumWidgetView.swift */,
 				E3E91C7628DC769E00FB66D9 /* VeggieTrackerWidget.intentdefinition */,
 				E3E91C7728DC76A200FB66D9 /* Assets.xcassets */,
 				E3E91C7928DC76A200FB66D9 /* Info.plist */,
-				E3E91C8828DC774E00FB66D9 /* MediumWidgetView.swift */,
 			);
 			path = VeggieTrackerWidget;
 			sourceTree = "<group>";
