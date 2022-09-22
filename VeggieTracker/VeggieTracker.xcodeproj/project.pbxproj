@@ -66,6 +66,22 @@
 		E36F66CA2804687800A87815 /* MealSuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C82804687800A87815 /* MealSuggestionView.swift */; };
 		E36F66CC28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
 		E36F66CD28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
+		E3E91C0F28DC643F00FB66D9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E91C0E28DC643F00FB66D9 /* WidgetKit.framework */; };
+		E3E91C1128DC643F00FB66D9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E91C1028DC643F00FB66D9 /* SwiftUI.framework */; };
+		E3E91C1428DC643F00FB66D9 /* VeggieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C1328DC643F00FB66D9 /* VeggieWidget.swift */; };
+		E3E91C1728DC644100FB66D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3E91C1628DC644100FB66D9 /* Assets.xcassets */; };
+		E3E91C1928DC644100FB66D9 /* VeggieWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C1528DC643F00FB66D9 /* VeggieWidget.intentdefinition */; };
+		E3E91C1A28DC644100FB66D9 /* VeggieWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C1528DC643F00FB66D9 /* VeggieWidget.intentdefinition */; };
+		E3E91C1D28DC644100FB66D9 /* VeggieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E3E91C0C28DC643F00FB66D9 /* VeggieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3E91C2528DC668E00FB66D9 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C2228DC666700FB66D9 /* SmallWidgetView.swift */; };
+		E3E91C2728DC66AC00FB66D9 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C2628DC66AC00FB66D9 /* MediumWidgetView.swift */; };
+		E3E91C2828DC686000FB66D9 /* VeggieTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351A73628077501007F32FD /* VeggieTrackerModel.swift */; };
+		E3E91C2928DC688700FB66D9 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B3280441C200A87815 /* Child.swift */; };
+		E3E91C2A28DC688B00FB66D9 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B5280441C200A87815 /* Meal.swift */; };
+		E3E91C2B28DC688D00FB66D9 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BC2804431100A87815 /* Ingredient.swift */; };
+		E3E91C2C28DC68B100FB66D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66B4280441C200A87815 /* User.swift */; };
+		E3E91C2D28DC68F800FB66D9 /* VeggieServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66BF280443F700A87815 /* VeggieServiceError.swift */; };
+		E3E91C2E28DC6D2300FB66D9 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66C22804478900A87815 /* MockModel.swift */; };
 		E3F5899F2805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
 		E3F589A02805954C0055C205 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F5899E2805954C0055C205 /* MealView.swift */; };
 		E3F589A82805A12C0055C205 /* EditChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F589A72805A12C0055C205 /* EditChild.swift */; };
@@ -95,7 +111,28 @@
 			remoteGlobalIDString = E36F667C28043EE200A87815;
 			remoteInfo = "VeggieTracker (macOS)";
 		};
+		E3E91C1B28DC644100FB66D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36F666B28043EE000A87815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E91C0B28DC643F00FB66D9;
+			remoteInfo = VeggieWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3E91C1E28DC644100FB66D9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E3E91C1D28DC644100FB66D9 /* VeggieWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E311280A280CDFA800E89F0B /* CookbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookView.swift; sourceTree = "<group>"; };
@@ -134,6 +171,15 @@
 		E36F66C528045E8600A87815 /* ChildrenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenListView.swift; sourceTree = "<group>"; };
 		E36F66C82804687800A87815 /* MealSuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSuggestionView.swift; sourceTree = "<group>"; };
 		E36F66CB28046C4000A87815 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		E3E91C0C28DC643F00FB66D9 /* VeggieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VeggieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E91C0E28DC643F00FB66D9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E3E91C1028DC643F00FB66D9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E3E91C1328DC643F00FB66D9 /* VeggieWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieWidget.swift; sourceTree = "<group>"; };
+		E3E91C1528DC643F00FB66D9 /* VeggieWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = VeggieWidget.intentdefinition; sourceTree = "<group>"; };
+		E3E91C1628DC644100FB66D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3E91C1828DC644100FB66D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E91C2228DC666700FB66D9 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		E3E91C2628DC66AC00FB66D9 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		E3F5899E2805954C0055C205 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E3F589A72805A12C0055C205 /* EditChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChild.swift; sourceTree = "<group>"; };
 		E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +215,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E91C0928DC643F00FB66D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E91C1128DC643F00FB66D9 /* SwiftUI.framework in Frameworks */,
+				E3E91C0F28DC643F00FB66D9 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +316,8 @@
 				E36F667E28043EE200A87815 /* macOS */,
 				E36F668728043EE200A87815 /* Tests iOS */,
 				E36F669328043EE200A87815 /* Tests macOS */,
+				E3E91C1228DC643F00FB66D9 /* VeggieWidget */,
+				E3E91C0D28DC643F00FB66D9 /* Frameworks */,
 				E36F667828043EE200A87815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -289,6 +346,7 @@
 				E36F667D28043EE200A87815 /* VeggieTracker.app */,
 				E36F668428043EE200A87815 /* Tests iOS.xctest */,
 				E36F669028043EE200A87815 /* Tests macOS.xctest */,
+				E3E91C0C28DC643F00FB66D9 /* VeggieWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,6 +377,28 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		E3E91C0D28DC643F00FB66D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3E91C0E28DC643F00FB66D9 /* WidgetKit.framework */,
+				E3E91C1028DC643F00FB66D9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3E91C1228DC643F00FB66D9 /* VeggieWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E3E91C1328DC643F00FB66D9 /* VeggieWidget.swift */,
+				E3E91C2228DC666700FB66D9 /* SmallWidgetView.swift */,
+				E3E91C2628DC66AC00FB66D9 /* MediumWidgetView.swift */,
+				E3E91C1528DC643F00FB66D9 /* VeggieWidget.intentdefinition */,
+				E3E91C1628DC644100FB66D9 /* Assets.xcassets */,
+				E3E91C1828DC644100FB66D9 /* Info.plist */,
+			);
+			path = VeggieWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,10 +409,12 @@
 				E36F667328043EE200A87815 /* Sources */,
 				E36F667428043EE200A87815 /* Frameworks */,
 				E36F667528043EE200A87815 /* Resources */,
+				E3E91C1E28DC644100FB66D9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E3E91C1C28DC644100FB66D9 /* PBXTargetDependency */,
 			);
 			name = "VeggieTracker (iOS)";
 			packageProductDependencies = (
@@ -395,6 +477,23 @@
 			productReference = E36F669028043EE200A87815 /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E3E91C0B28DC643F00FB66D9 /* VeggieWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E91C2128DC644100FB66D9 /* Build configuration list for PBXNativeTarget "VeggieWidgetExtension" */;
+			buildPhases = (
+				E3E91C0828DC643F00FB66D9 /* Sources */,
+				E3E91C0928DC643F00FB66D9 /* Frameworks */,
+				E3E91C0A28DC643F00FB66D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VeggieWidgetExtension;
+			productName = VeggieWidgetExtension;
+			productReference = E3E91C0C28DC643F00FB66D9 /* VeggieWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -402,7 +501,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					E36F667628043EE200A87815 = {
@@ -418,6 +517,9 @@
 					E36F668F28043EE200A87815 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = E36F667C28043EE200A87815;
+					};
+					E3E91C0B28DC643F00FB66D9 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -441,6 +543,7 @@
 				E36F667C28043EE200A87815 /* VeggieTracker (macOS) */,
 				E36F668328043EE200A87815 /* Tests iOS */,
 				E36F668F28043EE200A87815 /* Tests macOS */,
+				E3E91C0B28DC643F00FB66D9 /* VeggieWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -492,6 +595,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3E91C0A28DC643F00FB66D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E91C1728DC644100FB66D9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -505,6 +616,7 @@
 				E3F5899F2805954C0055C205 /* MealView.swift in Sources */,
 				E36F66C32804478900A87815 /* MockModel.swift in Sources */,
 				E36F669A28043EE200A87815 /* ContentView.swift in Sources */,
+				E3E91C1A28DC644100FB66D9 /* VeggieWidget.intentdefinition in Sources */,
 				E351A73728077501007F32FD /* VeggieTrackerModel.swift in Sources */,
 				E3F589B72805B4E10055C205 /* EditMealViewModel.swift in Sources */,
 				E3F589B42805B4D20055C205 /* EditMeal.swift in Sources */,
@@ -575,6 +687,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3E91C0828DC643F00FB66D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E91C1428DC643F00FB66D9 /* VeggieWidget.swift in Sources */,
+				E3E91C2D28DC68F800FB66D9 /* VeggieServiceError.swift in Sources */,
+				E3E91C2728DC66AC00FB66D9 /* MediumWidgetView.swift in Sources */,
+				E3E91C2A28DC688B00FB66D9 /* Meal.swift in Sources */,
+				E3E91C2928DC688700FB66D9 /* Child.swift in Sources */,
+				E3E91C2E28DC6D2300FB66D9 /* MockModel.swift in Sources */,
+				E3E91C2B28DC688D00FB66D9 /* Ingredient.swift in Sources */,
+				E3E91C2C28DC68B100FB66D9 /* User.swift in Sources */,
+				E3E91C2528DC668E00FB66D9 /* SmallWidgetView.swift in Sources */,
+				E3E91C1928DC644100FB66D9 /* VeggieWidget.intentdefinition in Sources */,
+				E3E91C2828DC686000FB66D9 /* VeggieTrackerModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -587,6 +717,11 @@
 			isa = PBXTargetDependency;
 			target = E36F667C28043EE200A87815 /* VeggieTracker (macOS) */;
 			targetProxy = E36F669128043EE200A87815 /* PBXContainerItemProxy */;
+		};
+		E3E91C1C28DC644100FB66D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3E91C0B28DC643F00FB66D9 /* VeggieWidgetExtension */;
+			targetProxy = E3E91C1B28DC644100FB66D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -703,6 +838,7 @@
 		E36F66A128043EE200A87815 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -737,6 +873,7 @@
 		E36F66A228043EE200A87815 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -903,6 +1040,67 @@
 			};
 			name = Release;
 		};
+		E3E91C1F28DC644100FB66D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VeggieWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VeggieWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker.VeggieWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3E91C2028DC644100FB66D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UKGSZT3NV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VeggieWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VeggieWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaima.ghaddab.VeggieTracker.VeggieWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -947,6 +1145,15 @@
 			buildConfigurations = (
 				E36F66AA28043EE200A87815 /* Debug */,
 				E36F66AB28043EE200A87815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3E91C2128DC644100FB66D9 /* Build configuration list for PBXNativeTarget "VeggieWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E91C1F28DC644100FB66D9 /* Debug */,
+				E3E91C2028DC644100FB66D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
