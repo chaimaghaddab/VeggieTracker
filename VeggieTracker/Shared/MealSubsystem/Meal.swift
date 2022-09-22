@@ -9,10 +9,15 @@ import Foundation
 import SwiftUI
 
 public class Meal: ObservableObject {
+    /// Meal's id
     public var id: UUID?
+    /// Meal's ingredients
     public var ingredients: [Ingredient]
+    /// meal's name
     public var name: String
+    /// meal's image (URL as String)
     public var imageUrl: String?
+    /// meal's instructions
     public var tips: String?
     
     
@@ -24,12 +29,14 @@ public class Meal: ObservableObject {
         self.tips = tips
     }
     
+    /// filters out the non veggie ingredients of the meal
     public var veggies: [Ingredient] {
         return self.ingredients.filter{
             $0.veggie == true
         }
     }
     
+    /// defines the grade of the meal, the higher the number of veggie ingredients, the higher the grade of the meal
     public var grade: some View {
         HStack {
             ForEach(1 ..< (veggies.count)/2 + 1) { i in

@@ -8,16 +8,20 @@
 import SwiftUI
 import os
 
+/// The view representing the list of children entered by the user
 struct ChildrenListView: View {
     @EnvironmentObject private var model: VeggieTrackerModel
+    /// if true, the sheet to add a new child to the list of children is added
     @State var presentAddChild = false
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ChildView")
     
     var body: some View {
         List {
+            /// children are sorted based on age
             ForEach (model.children.sorted()) {
                 child in
+                /// The view contains links leading to each child's details view
                 NavigationLink(destination: ChildView(child: child)) {
                     HStack{
                         Text("\(child.name)")
@@ -30,6 +34,7 @@ struct ChildrenListView: View {
         .navigationTitle("Children")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
+                /// A button for adding a new child to the list
                 addButton
             }
         }.sheet(isPresented: $presentAddChild) {
@@ -37,6 +42,7 @@ struct ChildrenListView: View {
         }
     }
     
+    /// A button for adding a new child to the list
     private var addButton: some View {
         Button(action: { self.presentAddChild = true
             logger.log("Add a new child")

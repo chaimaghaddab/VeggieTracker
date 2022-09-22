@@ -8,6 +8,7 @@
 import Foundation
 import os
 
+/// The user is represented by a user ID and a username
 public struct User {
     private enum Constants {
         static let userId = "userId"

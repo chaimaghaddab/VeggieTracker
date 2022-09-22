@@ -8,18 +8,20 @@
 import Foundation
 import os
 
-
+/// Decodable struct reresenting the API's result
 struct MealResult: Decodable {
     let idMeal: String
     let strMeal: String
 }
+/// Decodable struct representing the meals from the API
 struct Meals1: Decodable {
     let meals: [APIMeal]
 }
+/// decodable struct for the list of meals decoded from the API's result
 struct Meals: Decodable {
     let meals: [MealResult]
 }
-
+/// Decodable struct represeting a meal as in the API's JSON format with 20 ingredients
 struct APIMeal: Decodable {
     let strMeal: String
     let strArea: String
@@ -53,7 +55,7 @@ public class MealSuggestionModel: ObservableObject {
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "MealSuggestion API")
     
-    //  function that fetches all meal from the public API given by the URL
+    ///  function that fetches all meal from the public API given by the URL
     @MainActor
     func getAllMeals() async throws -> Void{
         guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?s=") else { throw VeggieServiceError.missingURL
@@ -74,10 +76,11 @@ public class MealSuggestionModel: ObservableObject {
         self.meals = meals
     }
     
-    //  function that returns all meals with given ids
+    ///  function that returns all meals with given ids
     func getMealsById(meals: [MealResult]) async throws -> [Meal]{
         var returnMeals = [Meal]()
         for meal in meals {
+            /// URL for the respective meals
             guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(meal.idMeal)") else {
                 throw VeggieServiceError.missingURL }
             let urlRequest = URLRequest(url: url)
@@ -85,14 +88,17 @@ public class MealSuggestionModel: ObservableObject {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 logger.log("Failed to fetch data from API")
                 throw VeggieServiceError.failedFetch}
+            /// list of decoded meals from the API's response
             let decodedMeals = try JSONDecoder().decode(Meals1.self, from: data)
             let decodedMeal = decodedMeals.meals[0]
+            /// list of meal's ingredients
             let mealIngredients = [decodedMeal.strIngredient1, decodedMeal.strIngredient2, decodedMeal.strIngredient3, decodedMeal.strIngredient4, decodedMeal.strIngredient5, decodedMeal.strIngredient6, decodedMeal.strIngredient7, decodedMeal.strIngredient8, decodedMeal.strIngredient9, decodedMeal.strIngredient10, decodedMeal.strIngredient11, decodedMeal.strIngredient12, decodedMeal.strIngredient13, decodedMeal.strIngredient14, decodedMeal.strIngredient15, decodedMeal.strIngredient16, decodedMeal.strIngredient17, decodedMeal.strIngredient18, decodedMeal.strIngredient19, decodedMeal.strIngredient20]
             
             var ingredients = [Ingredient]()
             for ingredient in mealIngredients {
                 if ingredient != nil && ingredient != "" {
                     let name = ingredient.unsafelyUnwrapped.lowercased()
+                    /// differentiation between veggie and non-veggie ingredients in decoding level
                     let veggie = VeggieTrackerModel.veggieList.contains(where: {veggie in
                         (name.contains(veggie) || veggie.contains(name)) && name != "egg"
                     })
@@ -102,12 +108,13 @@ public class MealSuggestionModel: ObservableObject {
                     }
                 }
             }
-            
             returnMeals.append(Meal(UUID(), ingredients: ingredients, name: decodedMeal.strMeal, imageUrl: decodedMeal.strMealThumb, tips: decodedMeal.strInstructions))
         }
         return returnMeals
     }
+    /// Function to return list of meals that contain a search ingredient
     public func getMealsByIngredient(ingredient: String) async throws -> [Meal] {
+        /// URL to get meal by ingredient
         guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?i=\(ingredient)") else {
             throw VeggieServiceError.missingURL}
         let urlRequest = URLRequest(url: url)
