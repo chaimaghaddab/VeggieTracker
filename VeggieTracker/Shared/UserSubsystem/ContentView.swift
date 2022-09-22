@@ -23,6 +23,8 @@ struct ContentView: View {
     @State private var isShowingCookbook = false
     @State private var scheduleNotifications = false
     @State private var authorizationDeniedAlert = false
+    @State private var showMeal = false
+    @State private var mealID = ""
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
     var body: some View {
@@ -87,14 +89,30 @@ struct ContentView: View {
             ScheduleNotificationsView(model)
         }.alert(isPresented: $authorizationDeniedAlert) {
             Alert(
-                            title: Text("Notifications Unothorized"),
-                            message: Text("Please enable notifications for the App VeggieTracker in the settings!"),
-                            primaryButton: .default(Text("Settings")) {
-                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                            },
-                            secondaryButton: .cancel()
-                        )
+                title: Text("Notifications Unothorized"),
+                message: Text("Please enable notifications for the App VeggieTracker in the settings!"),
+                primaryButton: .default(Text("Settings")) {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                },
+                secondaryButton: .cancel()
+            )
+            
+        }.onOpenURL { url in
+            print(url)
+            guard url.scheme == "veggie" else {
+                
+                return }
 
+            if(url.host == "meals") {
+                mealID = url.pathComponents[1]
+                print(mealID)
+                print(model.meal(UUID(uuidString: mealID)!) ?? "No meal")
+                showMeal = true
+            }
+            
+        }.sheet(isPresented: $showMeal) {
+            
+            MealView(meal: model.meal(UUID(uuidString: mealID)!)!, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: false)
         }
     }
 }

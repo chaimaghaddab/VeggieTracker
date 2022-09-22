@@ -18,29 +18,29 @@ public class MockModel : VeggieTrackerModel {
         
         let children = [Charlotte, Paul, Lara]
         
-        let meal1 = Meal(UUID(),
+        let meal1 = Meal(UUID(uuidString: "0bbb0214-3a6d-11ed-a261-0242ac120002"),
                          ingredients: [Ingredient(name:"carrot", veggie: true)],
-                         name: "Carrot cake"
+                         name: "Carrot_cake"
         )
         
-        let meal2 = Meal( UUID(),
+        let meal2 = Meal( UUID(uuidString: "15b42746-3a6d-11ed-a261-0242ac120002"),
                           ingredients: [Ingredient(name:"broccoli", veggie: true), Ingredient(name:"carrot", veggie: true)],
-                          name: "Roasted Veggies"
+                          name: "Roasted_Veggies"
         )
         
         let meals = [
             meal1,
             meal2,
-            Meal(UUID(),
-                 ingredients: [Ingredient(name:"potatoe", veggie: true)],
-                 name: "Oven Potatoe")
+            Meal(UUID(uuidString: "1f21c036-3a6d-11ed-a261-0242ac120002"),
+                 ingredients: [Ingredient(name:"potato", veggie: true)],
+                 name: "Oven_Potato")
         ]
         
         children[0].meals = meals
         children[1].meals.append(meal1)
         
         let user = User(id: UUID(), username: "Natalia")
-        
-        self.init(user: user, children: children, meals: meals)
+        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now, frequency: .ONCE, child: Charlotte.id, allChildren: false)
+        self.init(user: user, children: children, meals: meals, notifications: [notification1])
     }
 }

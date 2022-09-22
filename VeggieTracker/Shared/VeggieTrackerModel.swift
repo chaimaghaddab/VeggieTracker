@@ -22,11 +22,11 @@ public class VeggieTrackerModel: ObservableObject {
     /// A list containing ingredients that are classified as veggies
     static var veggieList = ["carrot", "artichoke", "broccoli", "caper", "cauliflower", "avocado", "breadfruit", "chickpea", "cucumber", "eggplant", "tomato", "pumpkin", "zucchini", "beet", "celery", "cabbage", "fennel", "spinach", "garlic", "onion", "kale", "paprika", "pepper", "potatoe", "aubergine", "shallots"]
     
-    public init(user: User, children: [Child] = [], meals: [Meal] = []) {
+    public init(user: User, children: [Child] = [], meals: [Meal] = [], notifications: [Notification]) {
         self.user = user
         self.children = children
         self.meals = meals
-        self.notifications = []
+        self.notifications = notifications
     }
     
     ///  returns child with id
@@ -38,6 +38,12 @@ public class VeggieTrackerModel: ObservableObject {
     public func meal(_ id: Meal.ID) -> Meal? {
         meals.first { $0.id == id }
     }
+    
+    ///  returns meal with id
+    public func meal(_ name: String) -> Meal? {
+        meals.first { $0.name == name }
+    }
+    
     
     ///  updates an existing child
     private func update(_ child: Child) {
