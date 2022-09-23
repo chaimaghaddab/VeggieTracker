@@ -30,4 +30,12 @@ public class Notification: Identifiable {
         self.child = child
         self.allChildren = allChildren
     }
+    
+    public init() {
+        self.id = UUID()
+        self.title = ""
+        self.time = .now
+        self.frequency = .ONCE
+        self.allChildren = true
+    }
 }

@@ -11,11 +11,11 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: [], notification: Notification(id: UUID(), title: "", time: .now, frequency: .ONCE, child: nil, allChildren: true))
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: [], notifications: [Notification(id: UUID(), title: "", time: .now, frequency: .ONCE, child: nil, allChildren: true)])
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration, meals: MockModel.init().meals, notification: MockModel.init().notifications[0])
+        let entry = SimpleEntry(date: Date(), configuration: configuration, meals: MockModel.init().meals, notifications: MockModel.init().notifications)
         completion(entry)
     }
 
@@ -26,7 +26,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: MockModel.init().meals, notification: MockModel.init().notifications[0])
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: MockModel.init().meals, notifications: MockModel.init().notifications)
             entries.append(entry)
         }
 
@@ -39,7 +39,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     let meals : [Meal]
-    let notification: Notification
+    let notifications: [Notification]
 }
 
 struct VeggieWidgetEntryView : View {
@@ -76,7 +76,7 @@ struct VeggieTrackerWidget: Widget {
 
 struct VeggieTrackerWidget_Previews: PreviewProvider {
     static var previews: some View {
-        VeggieWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: [], notification: MockModel.init().notifications[0]))
+        VeggieWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: [], notifications: MockModel.init().notifications))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

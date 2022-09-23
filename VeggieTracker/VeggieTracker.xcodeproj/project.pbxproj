@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652BB19728DDB8F6005F0A9C /* CircularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BB19628DDB8F6005F0A9C /* CircularWidgetView.swift */; };
 		E311280B280CDFA800E89F0B /* CookbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311280A280CDFA800E89F0B /* CookbookView.swift */; };
 		E311280C280CDFA800E89F0B /* CookbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311280A280CDFA800E89F0B /* CookbookView.swift */; };
 		E311280F280CE05400E89F0B /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = E311280E280CE05400E89F0B /* ACarousel */; };
@@ -144,6 +145,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		652BB19628DDB8F6005F0A9C /* CircularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularWidgetView.swift; sourceTree = "<group>"; };
 		E311280A280CDFA800E89F0B /* CookbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookbookView.swift; sourceTree = "<group>"; };
 		E3112814280CE12800E89F0B /* ACarouselViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarouselViewModel.swift; sourceTree = "<group>"; };
 		E3112815280CE12800E89F0B /* ACarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACarousel.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				E3E91C7428DC769E00FB66D9 /* VeggieTrackerWidget.swift */,
 				E3E91C8528DC770900FB66D9 /* SmallWidgetView.swift */,
 				E3E91C8828DC774E00FB66D9 /* MediumWidgetView.swift */,
+				652BB19628DDB8F6005F0A9C /* CircularWidgetView.swift */,
 				E3E91C7628DC769E00FB66D9 /* VeggieTrackerWidget.intentdefinition */,
 				E3E91C7728DC76A200FB66D9 /* Assets.xcassets */,
 				E3E91C7928DC76A200FB66D9 /* Info.plist */,
@@ -736,6 +739,7 @@
 				E3E91C9128DC783800FB66D9 /* VeggieTrackerModel.swift in Sources */,
 				E3E91C8C28DC776C00FB66D9 /* MealSuggestionModel.swift in Sources */,
 				E3E91C8D28DC776C00FB66D9 /* VeggieServiceError.swift in Sources */,
+				652BB19728DDB8F6005F0A9C /* CircularWidgetView.swift in Sources */,
 				E3E91C8A28DC776C00FB66D9 /* Child.swift in Sources */,
 				E3E91C7528DC769E00FB66D9 /* VeggieTrackerWidget.swift in Sources */,
 			);

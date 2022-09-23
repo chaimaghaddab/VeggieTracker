@@ -44,7 +44,7 @@ struct MediumWidgetView_Previews: PreviewProvider {
     static let mockModel = MockModel.init()
     
     static var previews: some View {
-        MediumWidgetView(entry: Provider.Entry(date: .now, configuration: ConfigurationIntent(), meals: mockModel.meals, notification: mockModel.notifications[0]))
+        MediumWidgetView(entry: Provider.Entry(date: .now, configuration: ConfigurationIntent(), meals: mockModel.meals, notifications: mockModel.notifications))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
