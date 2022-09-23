@@ -23,7 +23,7 @@ public class MockModel : VeggieTrackerModel {
                          name: "Carrot cake")
         
         let meal2 = Meal(UUID(uuidString: "15b42746-3a6d-11ed-a261-0242ac120002"),
-                          ingredients: [Ingredient(name:"broccoli", veggie: true), Ingredient(name:"carrot", veggie: true)],
+                          ingredients: [Ingredient(name:"broccoli", veggie: false), Ingredient(name:"carrot", veggie: false)],
                           name: "Roasted Veggies")
         
         let meal3 = Meal(UUID(uuidString: "00000000-0000-4000-8000-000000000000"),

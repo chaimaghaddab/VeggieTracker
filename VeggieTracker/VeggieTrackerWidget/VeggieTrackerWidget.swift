@@ -40,6 +40,21 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
     let meals : [Meal]
     let notifications: [Notification]
+    
+    var sortedMeals: [Meal] {
+        switch configuration.recipeSort {
+        case .veggies:
+            return meals.sorted { mealOne, mealTwo in
+                mealOne.veggies.count > mealTwo.veggies.count
+            }
+        case.name:
+            return meals.sorted { mealOne, mealTwo in
+                mealOne.name.lowercased() > mealTwo.name.lowercased()
+            }
+        default:
+            return meals
+        }
+    }
 }
 
 struct VeggieWidgetEntryView : View {

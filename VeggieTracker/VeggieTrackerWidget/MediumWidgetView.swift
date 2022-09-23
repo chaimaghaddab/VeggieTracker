@@ -10,9 +10,10 @@ import WidgetKit
 
 struct MediumWidgetView: View {
     var entry: Provider.Entry
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            ForEach(entry.meals.prefix(3), id: \.id) { meal in
+            ForEach(entry.sortedMeals.prefix(3), id: \.id) { meal in
                 VStack {
                     Link(destination: URL(string: "veggie://meals/\(meal.id!)")!) {
                         HStack {
