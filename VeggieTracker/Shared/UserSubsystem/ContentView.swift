@@ -113,7 +113,10 @@ struct ContentView: View {
                 print(meal)
                 selectedMeal = meal
             }
+        }.onAppear {
+            model.readMeals()
         }
+        
     }
 }
 

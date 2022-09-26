@@ -196,6 +196,7 @@
 		E3E91C7928DC76A200FB66D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E91C8528DC770900FB66D9 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		E3E91C8828DC774E00FB66D9 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		E3E91C9428E1A9D700FB66D9 /* VeggieTrackerWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VeggieTrackerWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
 		E3F5899E2805954C0055C205 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E3F589A72805A12C0055C205 /* EditChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChild.swift; sourceTree = "<group>"; };
 		E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewModel.swift; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 		E36F666A28043EE000A87815 = {
 			isa = PBXGroup;
 			children = (
+				E3E91C9428E1A9D700FB66D9 /* VeggieTrackerWidgetExtensionRelease.entitlements */,
 				E3E91BF928DB35D300FB66D9 /* VeggieTracker (iOS).entitlements */,
 				E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */,
 				E36F666F28043EE000A87815 /* Shared */,
@@ -919,7 +921,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "VeggieTracker (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "VeggieTracker (iOS)Release.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1126,6 +1128,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = VeggieTrackerWidgetExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UKGSZT3NV9;

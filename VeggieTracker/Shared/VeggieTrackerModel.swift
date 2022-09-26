@@ -8,12 +8,17 @@
 import Foundation
 import Combine
 import os
+import WidgetKit
 
 /// The app's global model
 public class VeggieTrackerModel: ObservableObject {
     @Published public internal(set) var user: User
     @Published public internal(set) var children: [Child]
-    @Published public internal(set) var meals: [Meal]
+    @Published public internal(set) var meals: [Meal] {
+        didSet {
+            writeMeals(meals)
+        }
+    }
     @Published public internal(set) var serverError: VeggieServiceError?
     @Published public internal(set) var notifications: [Notification]
     
@@ -79,5 +84,35 @@ public class VeggieTrackerModel: ObservableObject {
             meals.append(meal)
             logger.log("Added meal \(meal.name)")
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
+    
+   
+    func writeMeals(_ meals: [Meal]) -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("MealData.json")
+            try JSONEncoder()
+                .encode(meals)
+                .write(to: fileURL!)
+        } catch {
+            print("error writing data")
+        }
+    }
+    
+    public func readMeals() -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("MealData.json")
+//                .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//                .appendingPathComponent("MealData.json")
+            guard let fileURL = fileURL else {
+                return
+            }
+            let data = try Data(contentsOf: fileURL)
+            let mealData = try JSONDecoder().decode([Meal].self, from: data)
+            self.meals = mealData
+        } catch {
+            print(error)
+        }
+    }
+    
 }

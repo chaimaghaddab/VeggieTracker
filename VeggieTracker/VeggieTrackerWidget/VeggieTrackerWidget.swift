@@ -15,7 +15,7 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration, meals: MockModel.init().meals, notifications: MockModel.init().notifications)
+        let entry = SimpleEntry(date: Date(), configuration: configuration, meals: MockModel().meals, notifications: MockModel.init().notifications)
         completion(entry)
     }
 
@@ -26,7 +26,10 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: MockModel.init().meals, notifications: MockModel.init().notifications)
+            let model = MockModel()
+            model.readMeals()
+            print(model.meals)
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: model.meals, notifications: model.notifications)
             entries.append(entry)
         }
 

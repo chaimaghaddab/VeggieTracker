@@ -30,7 +30,7 @@ public class MockModel : VeggieTrackerModel {
                          ingredients: [Ingredient(name:"potato", veggie: true)],
                          name: "Oven Potato")
         
-        let meals = [meal1, meal2, meal3]
+        let meals = [meal1, meal3]
         
         children[0].meals = meals
         children[1].meals.append(meal1)
