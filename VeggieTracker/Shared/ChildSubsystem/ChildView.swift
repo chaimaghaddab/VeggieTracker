@@ -71,72 +71,71 @@ struct ChildView: View {
                                 }
                             }
                         }
-                        /// Sheet for adding a meal
-                        .sheet(isPresented: $presentAddMeal) {
-                            EditMeal(model.children[currentChild()], id: nil, model: model)
-                        }
-                        /// Sheet for presenting cookbook
-                        .sheet(isPresented: $presentCookbook) {
-                            NavigationView{
-                                VStack {
-                                    /// Link to redirect to cookbook
-                                    NavigationLink(destination: CookbookView(model: model), isActive: $goToCookbook) {}
-                                    /// List of selected meals
-                                    List(model.meals, id: \.self, selection: $selectedMeals) {
-                                        meal in
-                                        Text(meal.name)
-                                    }
-                                    Spacer()
-                                    /// Button to redirect to cookbook
-                                    Button(action: {
-                                        goToCookbook = true
-                                    }){
-                                        Text("Check my Cookbook \(Image(systemName: "book.closed.fill"))")
-                                    }
-                                }
-                                .environment(\.editMode, .constant(EditMode.active))
-                                .toolbar {
-                                    ToolbarItem(placement: .primaryAction) {
-                                        Button(action: {
-                                            for meal in selectedMeals {
-                                                if !child.meals.contains(meal) {
-                                                    /// save changes for the corresponding child
-                                                    if let child = model.child(child.id) {
-                                                        child.save(meal)
-                                                        model.save(child)
-                                                        model.save(meal)
-                                                    }
-                                                }
-                                            }
-                                            presentCookbook = false
-                                        }){
-                                            Text("Save")
-                                        }
-                                    }
-                                    /// Button for canceling changes
-                                    ToolbarItem(placement: .cancellationAction){
-                                        Button (action: {presentCookbook = false}){
-                                            Text("Cancel")
-                                        }
-                                    }
-                                }
+                    }
+                }
+                if !notifications.isEmpty {
+                    Section(header: Text("Scheduled melas").font(.title)) {
+                        List(notifications, id: \.id) { notification in
+                            HStack{
+                                Text(notification.title)
+                                Spacer()
+                                Text(notification.time.formatted(date: .omitted,time: .shortened))
                             }
                         }
                     }
                 }
             }
-            if !notifications.isEmpty {
-                Section(header: Text("Scheduled melas").font(.title)) {
-                    List(notifications, id: \.id) { notification in
-                        HStack{
-                            Text(notification.title)
-                            Spacer()
-                            Text(notification.time.formatted(date: .omitted,time: .shortened))
+        }
+        /// Sheet for adding a meal
+        .sheet(isPresented: $presentAddMeal) {
+            EditMeal(model.children[currentChild()], id: nil, model: model)
+        }
+        /// Sheet for presenting cookbook
+        .sheet(isPresented: $presentCookbook) {
+            NavigationView{
+                VStack {
+                    /// Link to redirect to cookbook
+                    NavigationLink(destination: CookbookView(model: model), isActive: $goToCookbook) {}
+                    /// List of selected meals
+                    List(model.meals, id: \.self, selection: $selectedMeals) {
+                        meal in
+                        Text(meal.name)
+                    }
+                    Spacer()
+                    /// Button to redirect to cookbook
+                    Button(action: {
+                        goToCookbook = true
+                    }){
+                        Text("Check my Cookbook \(Image(systemName: "book.closed.fill"))")
+                    }
+                }
+                .environment(\.editMode, .constant(EditMode.active))
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(action: {
+                            for meal in selectedMeals {
+                                if !child.meals.contains(meal) {
+                                    /// save changes for the corresponding child
+                                    if let child = model.child(child.id) {
+                                        child.save(meal)
+                                        model.save(child)
+                                        model.save(meal)
+                                    }
+                                }
+                            }
+                            presentCookbook = false
+                        }){
+                            Text("Save")
+                        }
+                    }
+                    /// Button for canceling changes
+                    ToolbarItem(placement: .cancellationAction){
+                        Button (action: {presentCookbook = false}){
+                            Text("Cancel")
                         }
                     }
                 }
             }
-            
         }.toolbar {
             ToolbarItem(placement: .automatic) {
                 /// Button for adding a meal
