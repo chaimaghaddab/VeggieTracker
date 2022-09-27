@@ -15,6 +15,7 @@ class ScheduleNotificationsViewModel: ObservableObject {
     @Published var frequency: FREQUENCY = .ONCE
     @Published var allChildren: Bool = true
     @Published var childSelection : UUID?
+    @Published var mealSelection : UUID?
     
     var disableSaveButton: Bool {
       return title == ""
@@ -31,9 +32,10 @@ class ScheduleNotificationsViewModel: ObservableObject {
     
     //  Either updates an existng child or adds a new child to the user's account
     func save() {
-        model.notifications.append(Notification(id: UUID(), title: title, time: time, frequency: frequency, child: childSelection, allChildren: allChildren))
+        model.notifications.append(Notification(id: UUID(), title: title, time: time, frequency: frequency, child: childSelection, allChildren: allChildren, meal: mealSelection))
         let content = UNMutableNotificationContent()
         let child = model.child(childSelection)
+        let meal = model.meal(mealSelection)
         content.title = title
         content.subtitle = allChildren ? "Reminder: it's your children's \(title) time!" : "Reminder: it's \(child!.name)'s \(title) time!"
         content.sound = UNNotificationSound.default

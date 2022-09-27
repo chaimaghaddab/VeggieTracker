@@ -24,7 +24,11 @@ public class VeggieTrackerModel: ObservableObject {
         }
     }
     @Published public internal(set) var serverError: VeggieServiceError?
-    @Published public internal(set) var notifications: [Notification]
+    @Published public internal(set) var notifications: [Notification] {
+        didSet {
+            writeNotifications(notifications)
+        }
+    }
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "Model")
     
@@ -44,7 +48,7 @@ public class VeggieTrackerModel: ObservableObject {
     }
     
     ///  returns meal with id
-    public func meal(_ id: Meal.ID) -> Meal? {
+    public func meal(_ id: Meal.ID?) -> Meal? {
         meals.first { $0.id == id }
     }
     
@@ -148,5 +152,30 @@ public class VeggieTrackerModel: ObservableObject {
             print(error)
         }
     }
+    func writeNotifications(_ notifications: [Notification]) -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("NotificationsData.json")
+            try JSONEncoder()
+                .encode(notifications)
+                .write(to: fileURL!)
+        } catch {
+            print("error writing data")
+        }
+    }
     
+    public func readNotifications() -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("NotificationsData.json")
+//                .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//                .appendingPathComponent("MealData.json")
+            guard let fileURL = fileURL else {
+                return
+            }
+            let data = try Data(contentsOf: fileURL)
+            let notificationsData = try JSONDecoder().decode([Notification].self, from: data)
+            self.notifications = notificationsData
+        } catch {
+            print(error)
+        }
+    }
 }

@@ -37,8 +37,8 @@ public class MockModel : VeggieTrackerModel {
         
         let user = User(id: UUID(), username: "Natalia")
         
-        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now, frequency: .ONCE, child: Charlotte.id, allChildren: false)
-        let notification2 = Notification(id: UUID(), title: "Dummy Notification 2", time: .now.addingTimeInterval(1000), frequency: .ONCE, child: Charlotte.id, allChildren: false)
+        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now, frequency: .ONCE, child: Charlotte.id, allChildren: false, meal: nil)
+        let notification2 = Notification(id: UUID(), title: "Dummy Notification 2", time: .now.addingTimeInterval(1000), frequency: .ONCE, child: Charlotte.id, allChildren: false, meal: nil)
         
         self.init(user: user, children: children, meals: meals, notifications: [notification1, notification2])
     }

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+<<<<<<< HEAD
+   uuid = "91A7872E-9EBB-40FA-B915-D7F0299109A2"
+   type = "1"
+   version = "2.0">
+=======
    uuid = "C65656D5-07CE-4686-A4D2-71761E611933"
    type = "1"
    version = "2.0">
@@ -69,4 +74,5 @@
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
+>>>>>>> localNotifications+widgets
 </Bucket>

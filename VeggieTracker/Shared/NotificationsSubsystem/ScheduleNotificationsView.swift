@@ -28,24 +28,39 @@ struct ScheduleNotificationsView: View {
                             Text("Cancel").foregroundColor(Color.red)
                         },
                     trailing:
-                        Button(action : {
-                            viewModel.frequency = frequency
-                            viewModel.save()
-                            self.presentationMode.wrappedValue.dismiss()
-                        }){
-                            Text("Save")
-                        }.disabled(viewModel.disableSaveButton))
+                        HStack {
+                            Button(action : {
+                                viewModel.model.notifications = viewModel.model.notifications
+                                self.presentationMode.wrappedValue.dismiss()
+                            }){
+                                Text("Save")
+                            }
+                            addButton.disabled(viewModel.disableSaveButton)
+                        }
+                )
             
         }.navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    /// A button for adding a new notification to the list
+    private var addButton: some View {
+        Button(action: {
+            viewModel.frequency = frequency
+            viewModel.save()
+        }) {
+            Image(systemName: "plus")
+        }
     }
     
     private var form: some View {
         Form {
             Section("Scheduled Notifications") {
                 List(viewModel.model.notifications) { notification in
-                    Text("\(notification.title)").swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button("Delete", role: .destructive) {
-                            viewModel.model.notifications.removeAll { $0.id == notification.id }
+                    NavigationLink(destination: NotificationView(notification: notification).environmentObject(viewModel.model)) {
+                        Text("\(notification.title)").swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button("Delete", role: .destructive) {
+                                viewModel.model.notifications.removeAll { $0.id == notification.id }
+                            }
                         }
                     }
                 }
@@ -55,15 +70,22 @@ struct ScheduleNotificationsView: View {
                 DatePicker("Time", selection: $viewModel.time, displayedComponents: [.hourAndMinute])
                 Picker("Frequency", selection: $frequency) {
                     ForEach(FREQUENCY.allCases, id: \.self) {
-                        frequency in Text("\(frequency.rawValue)")
+                        frequency in Text("\(frequency.rawValue)").tag(frequency as FREQUENCY?)
                     }
                 }.pickerStyle(.segmented)
                 Toggle("For all children", isOn: $viewModel.allChildren)
                 if !viewModel.allChildren {
                     Picker("Child", selection: $viewModel.childSelection) {
+                        Text("No Child").tag(nil as Child?)
                         ForEach(viewModel.model.children, id: \.id) {
-                            child in Text("\(child.name)")
+                            child in Text("\(child.name)").tag(child as Child?)
                         }
+                    }
+                }
+                Picker("Meal", selection: $viewModel.mealSelection) {
+                    Text("No Meal").tag(nil as Meal?)
+                    ForEach(viewModel.model.meals, id: \.id) {
+                        meal in Text("\(meal.name)").tag(meal as Meal?)
                     }
                 }
             }
