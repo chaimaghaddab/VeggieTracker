@@ -13,7 +13,7 @@ struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         let model = MockModel()
         model.readMeals()
-        return SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: model.meals, notifications: [Notification(id: UUID(), title: "", time: .now, frequency: .ONCE, child: nil, allChildren: true)])
+        return SimpleEntry(date: Date(), configuration: ConfigurationIntent(), meals: model.meals, notifications: [Notification(id: UUID(), title: "", time: .now, frequency: .ONCE, child: nil, allChildren: true, meal: nil)])
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
