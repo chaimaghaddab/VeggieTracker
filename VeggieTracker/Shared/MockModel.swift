@@ -30,14 +30,14 @@ public class MockModel : VeggieTrackerModel {
                          ingredients: [Ingredient(name:"potato", veggie: true)],
                          name: "Oven Potato")
         
-        let meals = [meal1, meal2, meal3]
+        let meals = [meal1, meal3]
         
         children[0].meals = meals
         children[1].meals.append(meal1)
         
         let user = User(id: UUID(), username: "Natalia")
         
-        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now.addingTimeInterval(10000), frequency: .ONCE, child: Charlotte.id, allChildren: false)
+        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now, frequency: .ONCE, child: Charlotte.id, allChildren: false)
         let notification2 = Notification(id: UUID(), title: "Dummy Notification 2", time: .now.addingTimeInterval(1000), frequency: .ONCE, child: Charlotte.id, allChildren: false)
         
         self.init(user: user, children: children, meals: meals, notifications: [notification1, notification2])

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public class Meal: ObservableObject {
+public class Meal: ObservableObject, Codable {
     /// Meal's id
     public var id: UUID?
     /// Meal's ingredients
@@ -66,4 +66,5 @@ extension Meal: Hashable {
         hasher.combine(id)
     }
 }
+
 
