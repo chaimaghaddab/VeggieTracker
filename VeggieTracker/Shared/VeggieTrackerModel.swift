@@ -178,5 +178,4 @@ public class VeggieTrackerModel: ObservableObject {
             print(error)
         }
     }
-    
 }

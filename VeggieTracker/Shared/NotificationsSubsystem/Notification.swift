@@ -41,4 +41,12 @@ public class Notification: Identifiable, Codable {
         self.allChildren = true
         self.meal = UUID()
     }
+    
+    public init() {
+        self.id = UUID()
+        self.title = ""
+        self.time = .now
+        self.frequency = .ONCE
+        self.allChildren = true
+    }
 }
