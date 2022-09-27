@@ -7,6 +7,7 @@
 
 import SwiftUI
 import os
+import UserNotifications
 
 /// Main view after launching the app
 struct ContentView: View {
@@ -20,6 +21,10 @@ struct ContentView: View {
     @State private var isShowingInfoView = false
     /// if true the view representing the cookbook of the parent(user) is opened
     @State private var isShowingCookbook = false
+    @State private var scheduleNotifications = false
+    @State private var authorizationDeniedAlert = false
+    @State private var selectedMeal: Meal?
+    @State private var selectedNotification: Notification?
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
@@ -56,10 +61,72 @@ struct ContentView: View {
                     logger.log("Loading cookbook")
                 }.padding().foregroundColor(Color.green).font(Font.headline)
             }
+            .toolbar {
+                Button {
+                    let currentCenter = UNUserNotificationCenter.current()
+                    currentCenter.getNotificationSettings { settings in
+                        let status = settings.authorizationStatus
+                        if status == .denied || status == .notDetermined {
+                            self.authorizationDeniedAlert = true
+                        }
+                    }
+                    currentCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                        if success {
+                            print("All set!")
+                            scheduleNotifications = true
+                        } else if let error = error {
+                            print(error.localizedDescription)
+                        }
+                    }
+                } label: {
+                    Image(systemName: "bell.fill").foregroundColor(.green)
+                }
+            }
         }
         .frame( maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("veggies").resizable())
         .ignoresSafeArea().opacity(0.9)
+        .alert(isPresented: $authorizationDeniedAlert) {
+            Alert(
+                title: Text("Notifications Unothorized"),
+                message: Text("Please enable notifications for the App VeggieTracker in the settings!"),
+                primaryButton: .default(Text("Settings")) {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                },
+                secondaryButton: .cancel()
+            )
+            
+        }
+        .sheet(isPresented: $scheduleNotifications) {
+            ScheduleNotificationsView(model)
+        }
+        .sheet(item: $selectedMeal) { meal in
+            MealView(meal: meal, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: false)
+        }
+        .sheet(item: $selectedNotification) { notification in
+            NotificationView(notification: notification)
+        }
+        .onOpenURL { url in
+            print(url)
+            guard url.scheme == "veggie" else { return }
+            
+            if(url.host == "meals") { // TODO: Once the @AppStorage is done, make an API call here and then get the meal by id
+                let mealID = url.pathComponents[1]
+                guard let mealUUID = UUID(uuidString: mealID),
+                      let meal = model.meal(mealUUID) else { return }
+                selectedMeal = meal
+            } else if url.host == "notifications" {
+                let notificationID = url.pathComponents[1]
+                guard let notificationUUID = UUID(uuidString: notificationID),
+                      let notification = model.notification(notificationUUID) else { return }
+                selectedNotification = notification
+            }
+        }.onAppear {
+            model.readMeals()
+            model.readChildren()
+            model.readNotifications()
+        }
+        
     }
 }
 

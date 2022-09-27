@@ -27,6 +27,7 @@ struct ChildView: View {
     /// set of selected meals
     @State var selectedMeals = Set<Meal>()
     
+    
     init(child: Child) {
         self.child = child
     }
@@ -40,77 +41,101 @@ struct ChildView: View {
     }
     
     var body: some View {
-        VStack{
+        let notifications =  model.notifications.filter { notification in
+            notification.allChildren || notification.child == child.id
+        }
+        let meals = model.children[currentChild()].meals
+        return VStack{
             VStack{
-                /// child's nema
+                /// child's name
                 Text(child.name).font(Font.custom( "DancingScript-Bold", size: 40))
                 /// child's description indicates age
                 Text(child.description).font(Font.custom( "DancingScript-Bold", size: 30)).foregroundColor(Color.mint)
             }
-            /// List of child's registred meals
-            List(model.children[currentChild()].meals, id: \.self) {
-                meal in
-                /// a link to the meal in the list
-                NavigationLink(destination: MealView(meal: meal, child: child, editOption: true, addOption: false)){
-                    HStack {
-                        /// Meal's name
-                        Text(meal.name)
-                        Spacer()
-                        /// Meal's degree on vegetables
-                        meal.grade
+            Spacer()
+            VStack {
+                if !meals.isEmpty {
+                    Spacer()
+                    Section(header: Text("Recipes").font(.title)) {
+                        /// List of child's registred meals
+                        List(meals, id: \.self) {
+                            meal in
+                            /// a link to the meal in the list
+                            NavigationLink(destination: MealView(meal: meal, child: child, editOption: true, addOption: false)){
+                                HStack {
+                                    /// Meal's name
+                                    Text(meal.name)
+                                    Spacer()
+                                    /// Meal's degree on vegetables
+                                    meal.grade
+                                }
+                            }
+                        }
+                    }
+                }
+                if !notifications.isEmpty {
+                    Section(header: Text("Scheduled melas").font(.title)) {
+                        List(notifications, id: \.id) { notification in
+                            NavigationLink(destination: NotificationView(notification: notification).environmentObject(model)) {
+                                HStack{
+                                    Text(notification.title)
+                                    Spacer()
+                                    Text(notification.time.formatted(date: .omitted,time: .shortened))
+                                }
+                            }
+                        }
                     }
                 }
             }
-            /// Sheet for adding a meal
-            .sheet(isPresented: $presentAddMeal) {
-                EditMeal(model.children[currentChild()], id: nil, model: model)
-            }
-            /// Sheet for presenting cookbook
-            .sheet(isPresented: $presentCookbook) {
-                NavigationView{
-                    VStack {
-                        /// Link to redirect to cookbook
-                        NavigationLink(destination: CookbookView(model: model), isActive: $goToCookbook) {}
-                        /// List of selected meals
-                        List(model.meals, id: \.self, selection: $selectedMeals) {
-                            meal in
-                            Text(meal.name)
-                        }
-                        Spacer()
-                        /// Button to redirect to cookbook
-                        Button(action: {
-                            goToCookbook = true
-                        }){
-                            Text("Check my Cookbook \(Image(systemName: "book.closed.fill"))")
-                        }
+        }
+        /// Sheet for adding a meal
+        .sheet(isPresented: $presentAddMeal) {
+            EditMeal(model.children[currentChild()], id: nil, model: model)
+        }
+        /// Sheet for presenting cookbook
+        .sheet(isPresented: $presentCookbook) {
+            NavigationView{
+                VStack {
+                    /// Link to redirect to cookbook
+                    NavigationLink(destination: CookbookView(model: model), isActive: $goToCookbook) {}
+                    /// List of selected meals
+                    List(model.meals, id: \.self, selection: $selectedMeals) {
+                        meal in
+                        Text(meal.name)
                     }
-                    .environment(\.editMode, .constant(EditMode.active))
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
-                            Button(action: {
-                                for meal in selectedMeals {
-                                    if !child.meals.contains(meal) {
-                                        /// save changes for the corresponding child
-                                        if let child = model.child(child.id) {
-                                            child.save(meal)
-                                            model.save(child)
-                                            model.save(meal)
-                                        }
+                    Spacer()
+                    /// Button to redirect to cookbook
+                    Button(action: {
+                        goToCookbook = true
+                    }){
+                        Text("Check my Cookbook \(Image(systemName: "book.closed.fill"))")
+                    }
+                }
+                .environment(\.editMode, .constant(EditMode.active))
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(action: {
+                            for meal in selectedMeals {
+                                if !child.meals.contains(meal) {
+                                    /// save changes for the corresponding child
+                                    if let child = model.child(child.id) {
+                                        child.save(meal)
+                                        model.save(child)
+                                        model.save(meal)
                                     }
                                 }
-                                presentCookbook = false
-                            }){
-                                Text("Save")
                             }
-                        }
-                        /// Button for canceling changes
-                        ToolbarItem(placement: .cancellationAction){
-                            Button (action: {presentCookbook = false}){
-                                Text("Cancel")
-                            }
+                            presentCookbook = false
+                        }){
+                            Text("Save")
                         }
                     }
-                    
+                    /// Button for canceling changes
+                    ToolbarItem(placement: .cancellationAction){
+                        Button (action: {presentCookbook = false}){
+                            Text("Cancel")
+                        }
+                    }
                 }
             }
         }.toolbar {

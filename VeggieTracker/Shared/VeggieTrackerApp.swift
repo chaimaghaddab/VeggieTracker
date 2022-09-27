@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-
+import UserNotifications
 
 @main
 struct VeggieTrackerApp: App {
-    @StateObject var model: VeggieTrackerModel = MockModel()
-    
+    @StateObject var model: VeggieTrackerModel = VeggieTrackerModel(user: User(username: "Nathalie"), children: [Child](), meals: [Meal](), notifications: [Notification]())
     var body: some Scene {
         WindowGroup {
             ContentView().environmentObject(model)
