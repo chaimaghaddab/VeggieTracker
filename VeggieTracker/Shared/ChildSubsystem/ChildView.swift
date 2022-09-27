@@ -76,10 +76,12 @@ struct ChildView: View {
                 if !notifications.isEmpty {
                     Section(header: Text("Scheduled melas").font(.title)) {
                         List(notifications, id: \.id) { notification in
-                            HStack{
-                                Text(notification.title)
-                                Spacer()
-                                Text(notification.time.formatted(date: .omitted,time: .shortened))
+                            NavigationLink(destination: NotificationView(notification: notification).environmentObject(model)) {
+                                HStack{
+                                    Text(notification.title)
+                                    Spacer()
+                                    Text(notification.time.formatted(date: .omitted,time: .shortened))
+                                }
                             }
                         }
                     }

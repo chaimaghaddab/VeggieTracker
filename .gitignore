@@ -1,2 +1,4 @@
 
+**/*.xcuserstate
+*.xcuserstate
 VeggieTracker/VeggieTracker.xcodeproj/project.xcworkspace/xcuserdata/chaimaghaddab.xcuserdatad/UserInterfaceState.xcuserstate
