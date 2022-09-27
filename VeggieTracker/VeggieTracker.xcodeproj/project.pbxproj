@@ -68,8 +68,6 @@
 		E36F66CD28046C4000A87815 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F66CB28046C4000A87815 /* ChildView.swift */; };
 		E3748D8C28E2F92B0070A55A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3748D8B28E2F92B0070A55A /* NotificationView.swift */; };
 		E3748D8D28E2F92B0070A55A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3748D8B28E2F92B0070A55A /* NotificationView.swift */; };
-		E3E91BFB28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */; };
-		E3E91BFC28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */; };
 		E3E91BFF28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */; };
 		E3E91C0028DB3ADB00FB66D9 /* ScheduleNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */; };
 		E3E91C0228DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */; };
@@ -187,7 +185,6 @@
 		E3748D8B28E2F92B0070A55A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		E3748D8E28E2FD4E0070A55A /* VeggieTracker (iOS)Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VeggieTracker (iOS)Release.entitlements"; sourceTree = "<group>"; };
 		E3E91BF928DB35D300FB66D9 /* VeggieTracker (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VeggieTracker (iOS).entitlements"; sourceTree = "<group>"; };
-		E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieTrackerAppDelegate.swift; sourceTree = "<group>"; };
 		E3E91BFE28DB3ADB00FB66D9 /* ScheduleNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotificationsView.swift; sourceTree = "<group>"; };
 		E3E91C0128DB3B7C00FB66D9 /* ScheduleNotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotificationsViewModel.swift; sourceTree = "<group>"; };
 		E3E91C0428DB3E0C00FB66D9 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -355,7 +352,6 @@
 				E351A73628077501007F32FD /* VeggieTrackerModel.swift */,
 				E3112813280CE12800E89F0B /* ACarousel */,
 				E36F667028043EE000A87815 /* VeggieTrackerApp.swift */,
-				E3E91BFA28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift */,
 				E36F667228043EE200A87815 /* Assets.xcassets */,
 				E36F66BF280443F700A87815 /* VeggieServiceError.swift */,
 				E36F66C22804478900A87815 /* MockModel.swift */,
@@ -665,7 +661,6 @@
 				E36F66CC28046C4000A87815 /* ChildView.swift in Sources */,
 				E36F66B6280441C200A87815 /* Child.swift in Sources */,
 				E3112819280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
-				E3E91BFB28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */,
 				E36F66B8280441C200A87815 /* User.swift in Sources */,
 				E311280B280CDFA800E89F0B /* CookbookView.swift in Sources */,
 				E3E91C7B28DC76A200FB66D9 /* VeggieTrackerWidget.intentdefinition in Sources */,
@@ -702,7 +697,6 @@
 				E36F66CD28046C4000A87815 /* ChildView.swift in Sources */,
 				E36F66B7280441C200A87815 /* Child.swift in Sources */,
 				E311281A280CE12900E89F0B /* ACarouselViewModel.swift in Sources */,
-				E3E91BFC28DB371300FB66D9 /* VeggieTrackerAppDelegate.swift in Sources */,
 				E36F66B9280441C200A87815 /* User.swift in Sources */,
 				E311280C280CDFA800E89F0B /* CookbookView.swift in Sources */,
 				E36F66BE2804431100A87815 /* Ingredient.swift in Sources */,
