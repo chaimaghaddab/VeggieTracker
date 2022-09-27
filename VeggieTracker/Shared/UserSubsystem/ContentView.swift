@@ -24,6 +24,7 @@ struct ContentView: View {
     @State private var scheduleNotifications = false
     @State private var authorizationDeniedAlert = false
     @State private var selectedMeal: Meal?
+    @State private var selectedNotification: Notification?
     
     let logger = Logger(subsystem: "chaima.ghaddab.VeggieTracker", category: "ContentView")
     
@@ -102,6 +103,9 @@ struct ContentView: View {
         .sheet(item: $selectedMeal) { meal in
             MealView(meal: meal, child: Child(name: "", age: 0, meals: []), editOption: false, addOption: false)
         }
+        .sheet(item: $selectedNotification) { notification in
+            NotificationView(notification: notification)
+        }
         .onOpenURL { url in
             print(url)
             guard url.scheme == "veggie" else { return }
@@ -110,8 +114,12 @@ struct ContentView: View {
                 let mealID = url.pathComponents[1]
                 guard let mealUUID = UUID(uuidString: mealID),
                       let meal = model.meal(mealUUID) else { return }
-                print(meal)
                 selectedMeal = meal
+            } else if url.host == "notifications" {
+                let notificationID = url.pathComponents[1]
+                guard let notificationUUID = UUID(uuidString: notificationID),
+                      let notification = model.notification(notificationUUID) else { return }
+                selectedNotification = notification
             }
         }.onAppear {
             model.readMeals()

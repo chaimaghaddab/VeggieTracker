@@ -52,6 +52,11 @@ public class VeggieTrackerModel: ObservableObject {
         meals.first { $0.id == id }
     }
     
+    ///  returns notification with id
+    public func notification(_ id: Notification.ID?) -> Notification? {
+        notifications.first { $0.id == id }
+    }
+    
     
     ///  updates an existing child
     private func update(_ child: Child) {
@@ -96,7 +101,6 @@ public class VeggieTrackerModel: ObservableObject {
             logger.log("Added meal \(meal.name)")
         }
         self.meals = self.meals
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
    
@@ -106,6 +110,7 @@ public class VeggieTrackerModel: ObservableObject {
             try JSONEncoder()
                 .encode(meals)
                 .write(to: fileURL!)
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             print("error writing data")
         }
@@ -132,6 +137,7 @@ public class VeggieTrackerModel: ObservableObject {
             try JSONEncoder()
                 .encode(children)
                 .write(to: fileURL!)
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             print("error writing data")
         }
@@ -158,6 +164,7 @@ public class VeggieTrackerModel: ObservableObject {
             try JSONEncoder()
                 .encode(notifications)
                 .write(to: fileURL!)
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             print("error writing data")
         }

@@ -32,6 +32,7 @@ struct Provider: IntentTimelineProvider {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let model = MockModel()
             model.readMeals()
+            model.readNotifications()
             let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: model.meals, notifications: model.notifications)
             entries = entries + [entry]
         }

@@ -12,7 +12,10 @@ struct SmallWidgetView: View {
     var entry: Provider.Entry
     
     var notification: Notification {
-        entry.notifications.isEmpty ? Notification() : entry.notifications[0]
+        let nextNotification = entry.notifications.sorted(by: { n1, n2 in
+            n1.time < n2.time
+        }).filter({$0.time >= .now}).first
+        return (nextNotification == nil) ? Notification() : nextNotification!
     }
     
     var body: some View {
@@ -33,6 +36,7 @@ struct SmallWidgetView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.white)
         .background(.green)
+        .widgetURL(URL(string: "veggie://notifications/\(notification.id)"))
     }
 }
 
