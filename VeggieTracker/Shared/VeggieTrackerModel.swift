@@ -12,9 +12,13 @@ import WidgetKit
 
 /// The app's global model
 public class VeggieTrackerModel: ObservableObject {
-    @Published public internal(set) var user: User
-    @Published public internal(set) var children: [Child]
-    @Published public internal(set) var meals: [Meal] {
+    @Published public var user: User
+    @Published public var children: [Child] {
+        didSet {
+            writeChildren(children)
+        }
+    }
+    @Published public var meals: [Meal] {
         didSet {
             writeMeals(meals)
         }
@@ -51,6 +55,7 @@ public class VeggieTrackerModel: ObservableObject {
             updateChild.name = child.name
             updateChild.meals = child.meals
             updateChild.age = child.age
+            self.children = children
         }
     }
     
@@ -59,6 +64,7 @@ public class VeggieTrackerModel: ObservableObject {
         if let updateMeal = self.meal(meal.id) {
             updateMeal.name = meal.name
             updateMeal.ingredients = meal.ingredients
+            self.meals = self.meals
         }
     }
     
@@ -72,6 +78,7 @@ public class VeggieTrackerModel: ObservableObject {
             children.append(child)
             logger.log("Edited child \(child.name)")
         }
+        self.children = self.children
     }
     
     /// Either add a new meal or saves the editing of an existong meal
@@ -84,6 +91,7 @@ public class VeggieTrackerModel: ObservableObject {
             meals.append(meal)
             logger.log("Added meal \(meal.name)")
         }
+        self.meals = self.meals
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -110,6 +118,32 @@ public class VeggieTrackerModel: ObservableObject {
             let data = try Data(contentsOf: fileURL)
             let mealData = try JSONDecoder().decode([Meal].self, from: data)
             self.meals = mealData
+        } catch {
+            print(error)
+        }
+    }
+    func writeChildren(_ children: [Child]) -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("ChildrenData.json")
+            try JSONEncoder()
+                .encode(children)
+                .write(to: fileURL!)
+        } catch {
+            print("error writing data")
+        }
+    }
+    
+    public func readChildren() -> Void {
+        do {
+            let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.VeggieApp.Data")?.appendingPathComponent("ChildrenData.json")
+//                .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+//                .appendingPathComponent("MealData.json")
+            guard let fileURL = fileURL else {
+                return
+            }
+            let data = try Data(contentsOf: fileURL)
+            let childrenData = try JSONDecoder().decode([Child].self, from: data)
+            self.children = childrenData
         } catch {
             print(error)
         }
