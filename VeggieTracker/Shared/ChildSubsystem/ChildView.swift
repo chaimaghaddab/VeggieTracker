@@ -88,7 +88,7 @@ struct ChildView: View {
         }
         /// Sheet for adding a meal
         .sheet(isPresented: $presentAddMeal) {
-            EditMeal(id: nil, model: model)
+            EditMeal(child, id: nil, model: model)
         }
         /// Sheet for presenting cookbook
         .sheet(isPresented: $presentCookbook) {

@@ -196,7 +196,6 @@
 		E3E91C7928DC76A200FB66D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E91C8528DC770900FB66D9 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		E3E91C8828DC774E00FB66D9 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
-		E3E91C9528E1B1C400FB66D9 /* VeggieTrackerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VeggieTrackerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		E3F5899E2805954C0055C205 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E3F589A72805A12C0055C205 /* EditChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChild.swift; sourceTree = "<group>"; };
 		E3F589AA2805A1AE0055C205 /* EditChildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewModel.swift; sourceTree = "<group>"; };
@@ -328,7 +327,6 @@
 		E36F666A28043EE000A87815 = {
 			isa = PBXGroup;
 			children = (
-				E3E91C9528E1B1C400FB66D9 /* VeggieTrackerWidgetExtension.entitlements */,
 				E3E91BF928DB35D300FB66D9 /* VeggieTracker (iOS).entitlements */,
 				E311283C280CF6F300E89F0B /* VeggieTracker--iOS--Info.plist */,
 				E36F666F28043EE000A87815 /* Shared */,
