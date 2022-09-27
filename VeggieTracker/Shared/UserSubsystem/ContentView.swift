@@ -73,6 +73,7 @@ struct ContentView: View {
                     currentCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {
                             print("All set!")
+                            authorizationDeniedAlert = false
                             scheduleNotifications = true
                         } else if let error = error {
                             print(error.localizedDescription)
