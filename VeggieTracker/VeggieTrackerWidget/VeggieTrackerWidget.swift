@@ -33,7 +33,7 @@ struct Provider: IntentTimelineProvider {
             let model = MockModel()
             model.readMeals()
             let entry = SimpleEntry(date: entryDate, configuration: configuration, meals: model.meals, notifications: model.notifications)
-            entries.append(entry)
+            entries = entries + [entry]
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
