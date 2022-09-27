@@ -18,29 +18,28 @@ public class MockModel : VeggieTrackerModel {
         
         let children = [Charlotte, Paul, Lara]
         
-        let meal1 = Meal(UUID(),
+        let meal1 = Meal(UUID(uuidString: "0bbb0214-3a6d-11ed-a261-0242ac120002"),
                          ingredients: [Ingredient(name:"carrot", veggie: true)],
-                         name: "Carrot cake"
-        )
+                         name: "Carrot cake")
         
-        let meal2 = Meal( UUID(),
-                          ingredients: [Ingredient(name:"broccoli", veggie: true), Ingredient(name:"carrot", veggie: true)],
-                          name: "Roasted Veggies"
-        )
+        let meal2 = Meal(UUID(uuidString: "15b42746-3a6d-11ed-a261-0242ac120002"),
+                          ingredients: [Ingredient(name:"broccoli", veggie: false), Ingredient(name:"carrot", veggie: false)],
+                          name: "Roasted Veggies")
         
-        let meals = [
-            meal1,
-            meal2,
-            Meal(UUID(),
-                 ingredients: [Ingredient(name:"potatoe", veggie: true)],
-                 name: "Oven Potatoe")
-        ]
+        let meal3 = Meal(UUID(uuidString: "00000000-0000-4000-8000-000000000000"),
+                         ingredients: [Ingredient(name:"potato", veggie: true)],
+                         name: "Oven Potato")
+        
+        let meals = [meal1, meal3]
         
         children[0].meals = meals
         children[1].meals.append(meal1)
         
         let user = User(id: UUID(), username: "Natalia")
         
-        self.init(user: user, children: children, meals: meals)
+        let notification1 = Notification(id: UUID(), title: "Dummy Notification", time: .now, frequency: .ONCE, child: Charlotte.id, allChildren: false, meal: nil)
+        let notification2 = Notification(id: UUID(), title: "Dummy Notification 2", time: .now.addingTimeInterval(1000), frequency: .ONCE, child: Charlotte.id, allChildren: false, meal: nil)
+        
+        self.init(user: user, children: children, meals: meals, notifications: [notification1, notification2])
     }
 }

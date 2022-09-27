@@ -1,6 +1,6 @@
 //
 //  Meal.swift
-//  
+//
 //
 //  Created by Chaima Ghaddab on 11.04.22.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public class Meal: ObservableObject {
+public class Meal: ObservableObject, Codable {
     /// Meal's id
     public var id: UUID?
     /// Meal's ingredients

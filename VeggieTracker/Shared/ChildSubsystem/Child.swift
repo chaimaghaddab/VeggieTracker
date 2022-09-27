@@ -1,6 +1,6 @@
 //
 //  Child.swift
-//  
+//
 //
 //  Created by Chaima Ghaddab on 11.04.22.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public class Child : ObservableObject {
+public final class Child : ObservableObject, Codable {
     /// Child's ID
     @Published public var id: UUID?
     /// Child's name
@@ -34,6 +34,7 @@ public class Child : ObservableObject {
             updateMeal.name = meal.name
             updateMeal.ingredients = meal.ingredients
         }
+        self.meals = self.meals
     }
     
     ///  Either editing an existing meal or adding a new meal
@@ -43,6 +44,7 @@ public class Child : ObservableObject {
         }
         else {
             meals.append(meal)
+            self.meals = self.meals
         }
     }
     
@@ -50,35 +52,58 @@ public class Child : ObservableObject {
     public func meal(_ id: Meal.ID?) -> Meal? {
         meals.first(where: { $0.id == id })
     }
-}
-
-/// child's description: age + year(s)
-extension Child: CustomStringConvertible {
-    public var description: String {
-        var desc = "year"
-        if age > 1 {
-            desc += "s"
-        }
-        return "\(age) \(desc)"
-    }
-}
-
-/// children are comparable and sortable based on age
-extension Child: Comparable {
-    public static func == (lhs: Child, rhs: Child) -> Bool {
-        lhs.name == rhs.name && lhs.age == rhs.age
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case age = "age"
+        case meals = "meals"
     }
     
-    public static func < (lhs: Child, rhs: Child) -> Bool {
-        lhs.age < rhs.age
+    required public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(UUID.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.age = try container.decode(Int.self, forKey: .age)
+        self.meals = try container.decode([Meal].self, forKey: .meals)
+      }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.name, forKey: .name)
+        try container.encode(self.age, forKey: .age)
+        try container.encode(self.meals, forKey: .meals)
     }
 }
-
-extension Child: Identifiable { }
-extension Child: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-        hasher.combine(age)
+    
+    
+    /// child's description: age + year(s)
+    extension Child: CustomStringConvertible {
+        public var description: String {
+            var desc = "year"
+            if age > 1 {
+                desc += "s"
+            }
+            return "\(age) \(desc)"
+        }
     }
-}
-
+    
+    /// children are comparable and sortable based on age
+    extension Child: Comparable {
+        public static func == (lhs: Child, rhs: Child) -> Bool {
+            lhs.name == rhs.name && lhs.age == rhs.age
+        }
+        
+        public static func < (lhs: Child, rhs: Child) -> Bool {
+            lhs.age < rhs.age
+        }
+    }
+    
+    extension Child: Identifiable { }
+    extension Child: Hashable {
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(name)
+            hasher.combine(age)
+        }
+    }
+    
